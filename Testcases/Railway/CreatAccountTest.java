@@ -6,10 +6,10 @@ import org.testng.Assert;
 
 import Constant.Constant;
 import DataObject.Account;
+import Guerrillamail.MailFake;
 
 public class CreatAccountTest extends TestBase {
     
-    // Tạo các account objects
     private Account existingAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
     private Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
     private Account invalidAccount = new Account(Constant.NEWUSER_MAIL, "", ""); // Tất cả fields blank

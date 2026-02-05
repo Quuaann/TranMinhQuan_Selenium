@@ -7,7 +7,7 @@ import Constant.Constant;
 
 public class HomePage extends GeneralPage {
 	
-	//Loactors
+	//Locators
 	private final By _linkRegister = By.xpath("//a[@href='/Account/Register.cshtml']");
 	private final By _selectedHome = By.xpath("//li[@class='selected']//span[text()='Home']");
 	

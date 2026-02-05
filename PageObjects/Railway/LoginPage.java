@@ -5,11 +5,13 @@ import org.openqa.selenium.WebElement;
 import Constant.Constant;
 
 public class LoginPage extends GeneralPage {
+	
     // Locators
     private final By _txtUsername = By.xpath("//input[@id='username']");
     private final By _txtPassword = By.xpath("//input[@id='password']");
     private final By _btnLogin = By.xpath("//input[@value='login']");
     private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
+    private final By _linkForgotPassword = By.xpath("//a[@href='/Account/ForgotPassword.cshtml']");
 
     // Elements
     public WebElement getTxtUsername() {
@@ -27,7 +29,12 @@ public class LoginPage extends GeneralPage {
     public WebElement getLblLoginErrorMsg() {
         return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
     }
-
+    
+    public WebElement getLinkForgotPassword() {
+        return Constant.WEBDRIVER.findElement(_linkForgotPassword);
+    }
+    
+    // Methods
     public boolean isLogined() {
     	 String welcomeMsg = getWelcomeMessage();
          if (welcomeMsg.equals("Welcome guest!")) {
@@ -36,6 +43,7 @@ public class LoginPage extends GeneralPage {
          return true;
     }
     
+    @SuppressWarnings("unchecked")
     public <T> T login(String username, String password) {       
         this.getTxtUsername().sendKeys(username);
         this.getTxtPassword().sendKeys(password);
@@ -47,6 +55,9 @@ public class LoginPage extends GeneralPage {
             return (T) this;
         }
     }
-
     
+    public ForgotPasswordPage gotoForgotPasswordPage() {
+    	this.getLinkForgotPassword().click();
+    	return new ForgotPasswordPage();
+    }
 }

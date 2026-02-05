@@ -1,16 +1,15 @@
-package Railway;
+package Guerrillamail;
 
-import java.time.Duration;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait; 
 import Constant.Constant;
 import Common.Utilities;
 public class MailFake {
-	//Loactors
+	
+	//Locators
 	private final By _tbEmail = By.xpath("//span[contains(@class, 'editable')]//input");
 	private final By _trEmail = By.xpath("//tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com']");
 	private final By _btnForget = By.xpath("//a[@id='forget_button']");
@@ -64,7 +63,7 @@ public class MailFake {
         this.getActiveLink().click();
         
 		ArrayList<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
-		String railwayTab = tabs.get(2);
+		tabs.get(2);
 	    Constant.WEBDRIVER.switchTo().window(tabs.get(tabs.size() - 1));
 	}
 	
@@ -72,7 +71,7 @@ public class MailFake {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
 	    js.executeScript("window.open();");
 	    ArrayList<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
-	    String aboutBlankTab = tabs.get(1); 
+	    tabs.get(1); 
 	    Constant.WEBDRIVER.switchTo().window(tabs.get(tabs.size() - 1));
 	    Constant.WEBDRIVER.navigate().to(FAKEMAIL_URL);
 		return this;

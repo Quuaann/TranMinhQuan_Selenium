@@ -17,10 +17,10 @@ public class TestBase {
         Constant.WEBDRIVER.manage().window().maximize();
     }
 
-//    @AfterMethod
-//    public void afterMethod() {
-//        System.out.println("Post-condition");
-//        
-//        Constant.WEBDRIVER.quit();
-//    }
+    @AfterMethod
+    public void afterMethod() {
+        System.out.println("Post-condition");
+        
+        Constant.WEBDRIVER.quit();
+    }
 }
