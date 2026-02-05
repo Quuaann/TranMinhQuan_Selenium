@@ -28,14 +28,25 @@ public class LoginPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
     }
 
-    // Methods
-    public HomePage login(String username, String password) {
-        // Submit login credentials
+    public boolean isLogined() {
+    	 String welcomeMsg = getWelcomeMessage();
+         if (welcomeMsg.equals("Welcome guest!")) {
+             return false;
+         }
+         return true;
+    }
+    
+    public <T> T login(String username, String password) {       
         this.getTxtUsername().sendKeys(username);
         this.getTxtPassword().sendKeys(password);
         this.getBtnLogin().click();
         
-        // Land on Home page
-        return new HomePage();
+        if (isLogined()) {
+            return (T) new HomePage();
+        } else {
+            return (T) this;
+        }
     }
+
+    
 }

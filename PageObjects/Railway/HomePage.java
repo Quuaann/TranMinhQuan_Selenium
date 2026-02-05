@@ -9,10 +9,15 @@ public class HomePage extends GeneralPage {
 	
 	//Loactors
 	private final By _linkRegister = By.xpath("//a[@href='/Account/Register.cshtml']");
+	private final By _selectedHome = By.xpath("//li[@class='selected']//span[text()='Home']");
 	
 	//Elements
 	public WebElement getLinkRegister() {
         return Constant.WEBDRIVER.findElement(_linkRegister);
+    }
+	
+	public WebElement getSelectedHome() {
+        return Constant.WEBDRIVER.findElement(_selectedHome);
     }
 	
 	//Methods
@@ -28,4 +33,6 @@ public class HomePage extends GeneralPage {
 		
 		return new RegisterPage();
 	}
+	
+	
 }

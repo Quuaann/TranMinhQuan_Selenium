@@ -6,7 +6,6 @@
       <class name="Railway.CreatAccountTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="afterMethod"/>
           <include name="TC09_CreateAndActivateAccount"/>
         </methods>
       </class> <!-- Railway.CreatAccountTest -->

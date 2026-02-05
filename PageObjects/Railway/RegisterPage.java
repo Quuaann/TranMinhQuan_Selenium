@@ -21,6 +21,8 @@ public class RegisterPage extends GeneralPage {
     private final By _lblRegisterSuccessMsg = By.xpath("//h1[text()='Thank you for registering your account']");
     private final By _lblActiveSuccessMsg = By.xpath("//p[text()='Registration Confirmed! You can now log in to the site.']");
     
+	private final By _selectedRegister = By.xpath("//li[@class='selected']//span[text()='Register']");
+
 	//Elements
     public WebElement getTxtEmail() {
         return Constant.WEBDRIVER.findElement(_txtEmail);
@@ -31,11 +33,11 @@ public class RegisterPage extends GeneralPage {
     }
     
     public WebElement getTxtConfirmPassword() {
-        return Constant.WEBDRIVER.findElement(_txtPid);
+        return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
     }
     
     public WebElement getTxtPid() {
-        return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
+        return Constant.WEBDRIVER.findElement(_txtPid);
     }
     
     public WebElement getBtnRegister() {
@@ -61,6 +63,10 @@ public class RegisterPage extends GeneralPage {
     public WebElement getLblActiveSuccessfulMsg() {
         return Constant.WEBDRIVER.findElement(_lblActiveSuccessMsg);
     } 
+    
+    public WebElement getSelectedRegister() {
+        return Constant.WEBDRIVER.findElement(_selectedRegister);
+    }
     
 	//Methods	
 	public RegisterPage enterRegistrationInfo(String email, String password, String confirmPassword, String pid) {
