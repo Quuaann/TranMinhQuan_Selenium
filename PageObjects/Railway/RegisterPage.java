@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import Common.Utilities;
 import Constant.Constant;
 
 public class RegisterPage extends GeneralPage {
@@ -76,8 +77,7 @@ public class RegisterPage extends GeneralPage {
 		this.getTxtConfirmPassword().sendKeys(confirmPassword);
 		this.getTxtPid().sendKeys(pid);
 		
-		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Utilities.scrollToElement(_btnRegister);
 		
 		this.getBtnRegister().click();
 		

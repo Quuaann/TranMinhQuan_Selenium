@@ -2,16 +2,16 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-05T17:49:35 GMT+07:00" name="Default suite" finished-at="2026-02-05T17:50:08 GMT+07:00" duration-ms="32822">
+  <suite started-at="2026-02-05T20:18:07 GMT+07:00" name="Default suite" finished-at="2026-02-05T20:18:47 GMT+07:00" duration-ms="39898">
     <groups>
     </groups>
-    <test started-at="2026-02-05T17:49:35 GMT+07:00" name="Default test" finished-at="2026-02-05T17:50:08 GMT+07:00" duration-ms="32822">
+    <test started-at="2026-02-05T20:18:07 GMT+07:00" name="Default test" finished-at="2026-02-05T20:18:47 GMT+07:00" duration-ms="39898">
       <class name="Railway.CreatAccountTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CreatAccountTest@2a65fe7c]" started-at="2026-02-05T17:49:35 GMT+07:00" name="beforeMethod" finished-at="2026-02-05T17:49:39 GMT+07:00" duration-ms="3853" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.CreatAccountTest@2a65fe7c]" started-at="2026-02-05T20:18:07 GMT+07:00" name="beforeMethod" finished-at="2026-02-05T20:18:11 GMT+07:00" duration-ms="3606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC09_CreateAndActivateAccount()[pri:0, instance:Railway.CreatAccountTest@2a65fe7c]" started-at="2026-02-05T17:49:39 GMT+07:00" name="TC09_CreateAndActivateAccount" finished-at="2026-02-05T17:50:08 GMT+07:00" duration-ms="28853" status="PASS">
+        <test-method signature="TC09_CreateAndActivateAccount()[pri:0, instance:Railway.CreatAccountTest@2a65fe7c]" started-at="2026-02-05T20:18:11 GMT+07:00" name="TC09_CreateAndActivateAccount" finished-at="2026-02-05T20:18:47 GMT+07:00" duration-ms="36170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC09_CreateAndActivateAccount -->

@@ -1,6 +1,7 @@
 package Common;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,6 +10,19 @@ import java.time.Duration;
 import Constant.Constant;
 
 public class Utilities {
+	
+	// Scroll đến element bằng JavaScript
+	public static void scrollToElement(WebElement element) {
+	    JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
+	    js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	// Hoặc với By locator
+	public static void scrollToElement(By locator) {
+	    WebElement element = Constant.WEBDRIVER.findElement(locator);
+	    scrollToElement(element);
+	}
+
 	
 	public static WebElement waitForClickable(By locator) {
         return waitForClickable(locator, Constant.TIMEOUT);

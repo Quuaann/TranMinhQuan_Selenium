@@ -55,11 +55,9 @@ public class MailFake {
 		this.getBtnNewMail().click();
 		this.getTbNewEmail().sendKeys(newmail);
 		this.getBtnSet().click();
-		
-//		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
-//        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         
         Utilities.waitForVisible(_trEmail);
+        Utilities.scrollToElement(_checkbox);
         this.getTrNewMail().click();
 		
         Utilities.waitForVisible(_activeLink);
@@ -74,7 +72,7 @@ public class MailFake {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
 	    js.executeScript("window.open();");
 	    ArrayList<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
-	    String aboutBlankTab = tabs.get(1);  // Tab thứ 2 là about:blank
+	    String aboutBlankTab = tabs.get(1); 
 	    Constant.WEBDRIVER.switchTo().window(tabs.get(tabs.size() - 1));
 	    Constant.WEBDRIVER.navigate().to(FAKEMAIL_URL);
 		return this;
