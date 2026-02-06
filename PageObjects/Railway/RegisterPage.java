@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
+import DataObject.Account;
 
 public class RegisterPage extends GeneralPage {
 	
@@ -69,12 +70,12 @@ public class RegisterPage extends GeneralPage {
     }
     
 	//Methods	
-	public RegisterPage enterRegistrationInfo(String email, String password, String confirmPassword, String pid) {
+	public RegisterPage enterRegistrationInfo(Account account) {
 		
-		this.getTxtEmail().sendKeys(email);
-		this.getTxtPassword().sendKeys(password);
-		this.getTxtConfirmPassword().sendKeys(confirmPassword);
-		this.getTxtPid().sendKeys(pid);
+		this.getTxtEmail().sendKeys(account.getEmail());
+		this.getTxtPassword().sendKeys(account.getPassword());
+		this.getTxtConfirmPassword().sendKeys(account.getConfirmPassword());
+		this.getTxtPid().sendKeys(account.getPid());
 		
 		Utilities.scrollToElement(_btnRegister);
 		
