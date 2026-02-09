@@ -21,7 +21,6 @@ public class ForgotPasswordTest extends TestBase {
 		homePage.createActiveAccount(homePage, newAccount);
 	    
 	    System.out.println("1. Navigate to QA Railway Login page");
-	    //homePage.open();
 	    LoginPage loginPage = homePage.gotoLoginPage();
 	    
 	    System.out.println("2. Click on 'Forgot Password page' link");
@@ -78,7 +77,6 @@ public class ForgotPasswordTest extends TestBase {
 		homePage.createActiveAccount(homePage, newAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-        //homePage.open();
         LoginPage loginPage = homePage.gotoLoginPage();
         
         System.out.println("2. Click on 'Forgot Password page' link");

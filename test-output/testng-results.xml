@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="4" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-06T15:38:17 GMT+07:00" name="Default suite" finished-at="2026-02-06T15:38:28 GMT+07:00" duration-ms="11247">
+  <suite started-at="2026-02-09T16:27:13 GMT+07:00" name="Default suite" finished-at="2026-02-09T16:29:33 GMT+07:00" duration-ms="140435">
     <groups>
     </groups>
-    <test started-at="2026-02-06T15:38:17 GMT+07:00" name="Default test" finished-at="2026-02-06T15:38:28 GMT+07:00" duration-ms="11247">
-      <class name="Railway.ForgotPasswordTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.ForgotPasswordTest@4c371370]" started-at="2026-02-06T15:38:17 GMT+07:00" name="beforeMethod" finished-at="2026-02-06T15:38:20 GMT+07:00" duration-ms="3074" status="PASS">
+    <test started-at="2026-02-09T16:27:13 GMT+07:00" name="Default test" finished-at="2026-02-09T16:29:33 GMT+07:00" duration-ms="140435">
+      <class name="Railway.LoginTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:13 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T16:27:16 GMT+07:00" duration-ms="3649" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11_ResetPasswordShowsErrorIfDifferentPasswords()[pri:0, instance:Railway.ForgotPasswordTest@4c371370]" started-at="2026-02-06T15:38:20 GMT+07:00" name="TC11_ResetPasswordShowsErrorIfDifferentPasswords" finished-at="2026-02-06T15:38:28 GMT+07:00" duration-ms="7964" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+        <test-method signature="TC01_LoginWithValidUsernameAndPassword()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:16 GMT+07:00" name="TC01_LoginWithValidUsernameAndPassword" finished-at="2026-02-09T16:27:21 GMT+07:00" duration-ms="5146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01_LoginWithValidUsernameAndPassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:21 GMT+07:00" name="afterMethod" finished-at="2026-02-09T16:27:21 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:21 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T16:27:23 GMT+07:00" duration-ms="1553" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC02_LoginWithBlankPassword()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:23 GMT+07:00" name="TC02_LoginWithBlankPassword" finished-at="2026-02-09T16:27:37 GMT+07:00" duration-ms="14152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02_LoginWithBlankPassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:37 GMT+07:00" name="afterMethod" finished-at="2026-02-09T16:27:37 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:37 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T16:27:40 GMT+07:00" duration-ms="2485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC03_LoginWithInvalidPassword()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:27:40 GMT+07:00" name="TC03_LoginWithInvalidPassword" finished-at="2026-02-09T16:28:27 GMT+07:00" duration-ms="47523" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=144.0.7559.133)
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f1e185ae0534be2bc3f065c946087255, findElement {value=//input[@id='use-alias'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59059}, goog:processID: 26656, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59059/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f1e185ae0534be2bc3f065c946087255]]>
+              <![CDATA[Error message is not displayed as expected. expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=144.0.7559.133)
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f1e185ae0534be2bc3f065c946087255, findElement {value=//input[@id='use-alias'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59059}, goog:processID: 26656, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59059/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f1e185ae0534be2bc3f065c946087255
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-at Guerrillamail.MailFake.getCheckbox(MailFake.java:39)
-at Guerrillamail.MailFake.activeNewMail(MailFake.java:116)
-at Railway.ForgotPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentPasswords(ForgotPasswordTest.java:94)
+              <![CDATA[java.lang.AssertionError: Error message is not displayed as expected. expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at Railway.LoginTest.TC03_LoginWithInvalidPassword(LoginTest.java:87)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -76,15 +76,93 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC11_ResetPasswordShowsErrorIfDifferentPasswords -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ForgotPasswordTest@4c371370]" started-at="2026-02-06T15:38:28 GMT+07:00" name="afterMethod" finished-at="2026-02-06T15:38:28 GMT+07:00" duration-ms="2" status="PASS">
+        </test-method> <!-- TC03_LoginWithInvalidPassword -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:27 GMT+07:00" name="afterMethod" finished-at="2026-02-09T16:28:27 GMT+07:00" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.ForgotPasswordTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:27 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T16:28:29 GMT+07:00" duration-ms="1815" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC04_LoginWithMultipleWrongPasswordAttempts()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:29 GMT+07:00" name="TC04_LoginWithMultipleWrongPasswordAttempts" finished-at="2026-02-09T16:28:43 GMT+07:00" duration-ms="13809" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Error message is not displayed correctly expected [Invalid username or password. Please try again] but found [Invalid username or password. Please try again.],
+Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Error message is not displayed correctly expected [Invalid username or password. Please try again] but found [Invalid username or password. Please try again.],
+Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts(LoginTest.java:131)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04_LoginWithMultipleWrongPasswordAttempts -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:43 GMT+07:00" name="afterMethod" finished-at="2026-02-09T16:28:43 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:43 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T16:28:45 GMT+07:00" duration-ms="2658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC05_LoginWithNotActivatedAccount()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:45 GMT+07:00" name="TC05_LoginWithNotActivatedAccount" finished-at="2026-02-09T16:28:59 GMT+07:00" duration-ms="13052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC05_LoginWithNotActivatedAccount -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:59 GMT+07:00" name="afterMethod" finished-at="2026-02-09T16:28:59 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:28:59 GMT+07:00" name="beforeMethod" finished-at="2026-02-09T16:29:00 GMT+07:00" duration-ms="1903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC06_RedirectToHomeAfterLogout()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:29:00 GMT+07:00" name="TC06_RedirectToHomeAfterLogout" finished-at="2026-02-09T16:29:33 GMT+07:00" duration-ms="32550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC06_RedirectToHomeAfterLogout -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@4c371370]" started-at="2026-02-09T16:29:33 GMT+07:00" name="afterMethod" finished-at="2026-02-09T16:29:33 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Railway.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
+import DataObject.Account;
 
 public class LoginPage extends GeneralPage {
 	
@@ -88,9 +89,9 @@ public class LoginPage extends GeneralPage {
     }
     
     @SuppressWarnings("unchecked")
-    public <T> T login(String username, String password) {       
-        this.getTxtUsername().sendKeys(username);
-        this.getTxtPassword().sendKeys(password);
+    public <T> T login(Account account) {       
+        this.getTxtUsername().sendKeys(account.getEmail());
+        this.getTxtPassword().sendKeys(account.getPassword());
         this.getBtnLogin().click();
         
         if (isLogined()) {

@@ -1,6 +1,7 @@
 package Constant;
 
 import org.openqa.selenium.WebDriver;
+
 import org.apache.commons.lang3.RandomStringUtils;
 
 public class Constant {
@@ -16,6 +17,11 @@ public class Constant {
 	public static final String NEWUSER = RandomStringUtils.randomAlphabetic(10);
 	public static final String NEWUSER_MAIL = NEWUSER + "@sharklasers.com";
 	
+	public static final Integer DEPART_DAY = 3;
+	
 	public static final Integer TIMEOUT = 20;
+	
+
+	
 }
 

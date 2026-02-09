@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Railway.ForgotPasswordTest">
+      <class name="Railway.LoginTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="TC11_ResetPasswordShowsErrorIfDifferentPasswords"/>
+          <include name="TC03_LoginWithInvalidPassword"/>
           <include name="afterMethod"/>
+          <include name="TC04_LoginWithMultipleWrongPasswordAttempts"/>
         </methods>
-      </class> <!-- Railway.ForgotPasswordTest -->
+      </class> <!-- Railway.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

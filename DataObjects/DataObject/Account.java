@@ -32,23 +32,23 @@ public class Account {
     
     // GETTERS
     public String getUsername() {
-        return username;
+        return this.username;
     }
     
     public String getEmail() {
-        return email;
+        return this.email;
     }
     
     public String getPassword() {
-        return password;
+        return this.password;
     }
     
     public String getConfirmPassword() {
-        return confirmPassword;
+        return this.confirmPassword;
     }
     
     public String getPid() {
-        return pid;
+        return this.pid;
     }
     
     // SETTERS
@@ -72,35 +72,4 @@ public class Account {
         this.pid = pid;
     }
     
-//    // Utility methods - chỉ giữ những cái thực sự cần
-//    public boolean isPasswordMatch() {
-//        return password != null && password.equals(confirmPassword);
-//    }
-//    
-//    public boolean isValidEmail() {
-//        return email != null && email.contains("@") && email.contains(".");
-//    }
-//    
-//    // toString method
-//    @Override
-//    public String toString() {
-//        return String.format(
-//            "UserAccount{username='%s', email='%s', pid='%s'}",
-//            username, email, pid
-//        );
-//    }
-//    
-//    // equals và hashCode
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        UserAccount that = (UserAccount) o;
-//        return Objects.equals(email, that.email);
-//    }
-//    
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(email);
-//    }
 }

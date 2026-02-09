@@ -14,8 +14,10 @@ public class GeneralPage {
     private final By tabFAQ = By.xpath("//div[@id='menu']//a[@href='/Page/FAQ.cshtml']");
     private final By tabRegister = By.xpath("//div[@id='menu']//a[@href='/Account/Register.cshtml']");
     private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
+    private final By tabBookTicket = By.xpath("//div[@id='menu']//a[@href='/Page/BookTicketPage.cshtml']");
+    private final By tabTimetable = By.xpath("//div[@id='menu']//a[@href='TrainTimeListPage.cshtml']");
+    private final By tabTicketPrice = By.xpath("//div[@id='menu']//a[@href='/Page/TrainPriceListPage.cshtml']");
 
-    // Elements
     protected WebElement getTabLogin() {
         return Constant.WEBDRIVER.findElement(tabLogin);
     }
@@ -34,6 +36,18 @@ public class GeneralPage {
 
     protected WebElement getLblWelcomeMessage() {
         return Constant.WEBDRIVER.findElement(lblWelcomeMessage);
+    }
+    
+    protected WebElement getTabBookTicket() {
+        return Constant.WEBDRIVER.findElement(tabBookTicket);
+    }
+    
+    protected WebElement getTabTimetable() {
+        return Constant.WEBDRIVER.findElement(tabTimetable);
+    }
+    
+    protected WebElement getTabTicketPrice() {
+        return Constant.WEBDRIVER.findElement(tabTicketPrice);
     }
 
     // Methods
@@ -59,6 +73,21 @@ public class GeneralPage {
     public RegisterPage gotoRegisterPage() {
         this.getTabRegister().click();
         return new RegisterPage();
+    }
+    
+    public BookTicketPage gotoBookTicketPage() {
+        this.getTabBookTicket().click();
+        return new BookTicketPage();
+    }
+    
+    public TimetablePage gotoTimetablePage() {
+        this.getTabTimetable().click();
+        return new TimetablePage();
+    }
+    
+    public TicketPricePage gotoTicketPricePage() {
+        this.getTabTicketPrice().click();
+        return new TicketPricePage();
     }
     
     // From TC07

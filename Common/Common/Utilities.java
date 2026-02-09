@@ -5,19 +5,30 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
+import java.util.Date;
 
 import Constant.Constant;
 
 public class Utilities {
 	
-	// Scroll đến element bằng JavaScript
+	public static String convertDateToStringFromToday(int day) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, day);
+		Date tomorrow = calendar.getTime();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+		return sdf.format(tomorrow);
+	}
+	
 	public static void scrollToElement(WebElement element) {
 	    JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
 	    js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
-	// Hoặc với By locator
 	public static void scrollToElement(By locator) {
 	    WebElement element = Constant.WEBDRIVER.findElement(locator);
 	    scrollToElement(element);

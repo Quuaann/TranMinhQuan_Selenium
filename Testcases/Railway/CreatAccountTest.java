@@ -9,13 +9,10 @@ import DataObject.Account;
 import Guerrillamail.MailFake;
 
 public class CreatAccountTest extends TestBase {
-    
-    private Account existingAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
-    private Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
-    private Account invalidAccount = new Account(Constant.NEWUSER_MAIL, "", ""); // Tất cả fields blank
 
     @Test
     public void TC07_CannotCreateAccountWithExistingEmail() {
+    	final Account existingAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
         System.out.println("TC07 - User can't create account with existing email");
         String expectedMsg = "This email address is already in use.";
         
@@ -44,6 +41,7 @@ public class CreatAccountTest extends TestBase {
 
     @Test
     public void TC08_RegisterWithEmptyPasswordAndPID() {
+    	final Account invalidAccount = new Account(Constant.NEWUSER_MAIL, "", "");
         System.out.println("TC08C - User can't create account while password and PID fields are empty");
         String expectedGeneralMsg = "There're errors in the form. Please correct the errors and try again.";
         String expectedPwdMsg = "Invalid password length";
@@ -89,6 +87,7 @@ public class CreatAccountTest extends TestBase {
     
     @Test
     public void TC09_CreateAndActivateAccount() {
+    	final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
         System.out.println("TC09 - User create and activate account");
         SoftAssert softAssert = new SoftAssert();
         
