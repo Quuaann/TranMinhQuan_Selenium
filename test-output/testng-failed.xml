@@ -6,8 +6,9 @@
       <class name="Railway.BookTicketTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="TC13_UserCanBookManyTicketsAtATime"/>
           <include name="afterMethod"/>
-          <include name="TC15_UserCanBookTicketFromTimetable"/>
         </methods>
       </class> <!-- Railway.BookTicketTest -->
     </classes>

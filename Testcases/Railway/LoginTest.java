@@ -1,7 +1,6 @@
 package Railway;
 
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import org.testng.Assert;
 
 import Constant.Constant;
@@ -83,8 +82,6 @@ public class LoginTest extends TestBase {
 	    final String expectedFirstMsg = "Invalid username or password. Please try again";
 	    final String expectedSecondMsg = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
 
-	    SoftAssert softAssert = new SoftAssert();
-
 	    System.out.println("1. Navigate to QA Railway Website");
 	    homePage.open();
 	    
@@ -98,7 +95,7 @@ public class LoginTest extends TestBase {
 	    System.out.println("Verify second error message");
 	    String actualFirstMsg = loginPage.getLblLoginErrorMsg().getText();
 	    
-	    softAssert.assertEquals(actualFirstMsg, expectedFirstMsg,
+	    Assert.assertEquals(actualFirstMsg, expectedFirstMsg,
 	        "Error message is not displayed correctly");
 
 	    System.out.println("5. Repeat step 3 and 4 three more times.");
@@ -110,10 +107,9 @@ public class LoginTest extends TestBase {
 	    System.out.println("Verify error message appears");
 	    String actualSecondMsg = loginPage.getLblLoginErrorMsg().getText();
 	    
-	    softAssert.assertEquals(actualSecondMsg, expectedSecondMsg,
+	    Assert.assertEquals(actualSecondMsg, expectedSecondMsg,
 	        "Attempt limit warning message is not displayed");
 	    
-	    softAssert.assertAll();
 	    System.out.println("TC04 PASSED");
 	}
 

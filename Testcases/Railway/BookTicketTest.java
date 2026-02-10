@@ -2,7 +2,6 @@ package Railway;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import Common.Utilities;
 import Constant.Constant;
@@ -38,21 +37,18 @@ public class BookTicketTest extends TestBase {
         System.out.println("7. Select '1' for 'Ticket amount'");
         System.out.println("8. Click on 'Book ticket' button");
         bookTicketPage = bookTicketPage.bookTicket(expectedBookTicket);      
-                
-        SoftAssert softAssert = new SoftAssert();
-        
+                        
         System.out.println("Verify message 'Ticket booked successfully!' displays");
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
         
-        softAssert.assertTrue(successMessage.contains(expectedSuccessMsg),
+        Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
             "Success message not displayed. Actual: " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
         BookTicket actualbookTicket = new BookTicket();
         actualbookTicket = bookTicketPage.getActualBookTicket(actualbookTicket);
-        softAssert.assertEquals(actualbookTicket.getText(), expectedBookTicket.getText(),"Book Ticket not match");
+        Assert.assertEquals(actualbookTicket.getText(), expectedBookTicket.getText(),"Book Ticket not match");
         
-        softAssert.assertAll();
         System.out.println("TC12 PASSED - User can book 1 ticket successfully");
     }
 	    
@@ -81,13 +77,11 @@ public class BookTicketTest extends TestBase {
         System.out.println("7. Select '5' for 'Ticket amount'");
         System.out.println("8. Click on 'Book ticket' button");
         bookTicketPage.bookTicket(expectedBookTicket);
-        
-        SoftAssert softAssert = new SoftAssert();
-        
+                
         System.out.println("Verify message 'Ticket booked successfully!' displays");
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
         
-        softAssert.assertTrue(successMessage.contains(expectedSuccessMsg),
+        Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
             "Success message not displayed. Actual: " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
@@ -95,9 +89,8 @@ public class BookTicketTest extends TestBase {
         BookTicket actualBookTicket = new BookTicket();
         actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
         
-        softAssert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
+        Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
         
-        softAssert.assertAll();
         System.out.println("TC13 PASSED - User can book many tickets at a time");
     }
     
@@ -122,23 +115,20 @@ public class BookTicketTest extends TestBase {
         
         System.out.println("4. Click on 'check price' link of the route from 'Đà Nẵng' to 'Sài Gòn'");
         TicketPricePage ticketPricePage = timetablePage.clickCheckPriceForRoute();
-        
-        SoftAssert softAssert = new SoftAssert();
-        
+                
         System.out.println("Verify 'Ticket Price' page is loaded");
         boolean isTicketPricePageDisplayed = ticketPricePage.getSelectedTicketPrice().isDisplayed();
 	    Assert.assertTrue(isTicketPricePageDisplayed, "Ticket price page is not displayed.");
 	    
 	    System.out.println("Verify Ticket table shows 'Ticket price from Đà Nẵng to Sài Gòn'.");
         String displayedRoute = ticketPricePage.getThHeader().getText();        
-        softAssert.assertEquals(displayedRoute, expectedRoute, "Route not match");
+        Assert.assertEquals(displayedRoute, expectedRoute, "Route not match");
         
         System.out.println("Verify Price for each seat displays correctly");
         TicketPrice actualTicketPrice = new TicketPrice();
         actualTicketPrice = ticketPricePage.getTxtTicketTableCell(actualTicketPrice);
         Assert.assertEquals(actualTicketPrice.getText(), expectedTicketPrice.getText(), "Ticket prices do not match");
         
-        softAssert.assertAll();
         System.out.println("TC14 PASSED - User can check price of ticket from Timetable");
     }
     
@@ -170,10 +160,9 @@ public class BookTicketTest extends TestBase {
         bookTicketPage = bookTicketPage.bookTicketApart(expectedBookTicket.getDepartDate(), "", "", "", expectedBookTicket.getTicketAmount());
         
         System.out.println("Verify message 'Ticket booked successfully!' displays");
-        SoftAssert softAssert = new SoftAssert();
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
         
-        softAssert.assertTrue(successMessage.contains(expectedSuccessMsg),
+        Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
             "Success message not displayed. Actual: " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
@@ -182,9 +171,8 @@ public class BookTicketTest extends TestBase {
         actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
         
         expectedBookTicket.setSeatType(Constant.DEFAULT_SEATTYPE);
-        softAssert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
+        Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
         
-        softAssert.assertAll();
         System.out.println("TC15 PASSED - User can book ticket from Timetable");
     }
     
