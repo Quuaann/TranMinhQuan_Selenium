@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 
 import Constant.Constant;
+import Constant.TabMenu;
 import DataObject.Account;
 import Guerrillamail.MailFake;
 
@@ -19,7 +20,7 @@ public class RegisterTest extends TestBase {
         homePage.open();
         
         System.out.println("2. Click on 'Register' tab");
-        RegisterPage registerPage = homePage.gotoRegisterPage();
+        RegisterPage registerPage = homePage.gotoPage(TabMenu.REGISTER,RegisterPage.class);
         
         System.out.println("3. Enter information of the existing account");
         System.out.println("4. Click on 'Register' button");
@@ -36,7 +37,7 @@ public class RegisterTest extends TestBase {
     @Test
     public void TC08_RegisterWithEmptyPasswordAndPID() {
         System.out.println("TC08C - User can't create account while password and PID fields are empty");
-    	final Account invalidAccount = new Account(Constant.NEWUSER_MAIL, "", "");
+    	final Account invalidAccount = new Account(Constant.getNewUserMail(), "", "");
     	final String expectedGeneralMsg = "There're errors in the form. Please correct the errors and try again.";
     	final String expectedPwdMsg = "Invalid password length";
     	final String expectedPidMsg = "Invalid ID length";
@@ -45,7 +46,7 @@ public class RegisterTest extends TestBase {
         homePage.open();
         
         System.out.println("2. Click on 'Register' tab");
-        RegisterPage registerPage = homePage.gotoRegisterPage();
+        RegisterPage registerPage = homePage.gotoPage(TabMenu.REGISTER,RegisterPage.class);
         
         System.out.println("3. Enter valid email address and leave other fields empty");
         registerPage.enterRegistrationInfo(invalidAccount);
@@ -68,7 +69,7 @@ public class RegisterTest extends TestBase {
     @Test
     public void TC09_CreateAndActivateAccount() {
     	System.out.println("TC09 - User create and activate account");
-    	final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
+    	final Account newAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
         
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();

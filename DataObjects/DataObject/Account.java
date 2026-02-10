@@ -1,18 +1,15 @@
 package DataObject;
 
 public class Account {
-    // Chỉ giữ các thuộc tính cơ bản cần thiết cho test
     private String username;
     private String email;
     private String password;
     private String confirmPassword;
     private String pid;
     
-    // Constructor mặc định
     public Account() {
     }
     
-    // Constructor với thông tin cơ bản
     public Account(String email, String password, String pid) {
         this.email = email;
         this.password = password;
@@ -20,7 +17,6 @@ public class Account {
         this.pid = pid;
     }
     
-    // Constructor đầy đủ
     public Account(String username, String email, String password, 
                       String confirmPassword, String pid) {
         this.username = username;

@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.Province;
+import Constant.SeatType;
+import Constant.TabMenu;
 import DataObject.Account;
 import DataObject.BookTicket;
 import DataObject.TicketPrice;
@@ -14,22 +17,22 @@ public class BookTicketTest extends TestBase {
 	@Test
     public void TC12_UserCanBookOneTicketAtATime() {
 		System.out.println("TC12 - User can book 1 ticket at a time");
-	    final Account testAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
+	    final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
 	    final String twoDayFromeDepartDay = Utilities.convertDateToStringFromToday(2 + Constant.DEPART_DAY);
-        final BookTicket expectedBookTicket = new BookTicket(twoDayFromeDepartDay,"Nha Trang","Huế","Soft bed with air conditioner","1");
+        final BookTicket expectedBookTicket = new BookTicket(twoDayFromeDepartDay,Province.NHA_TRANG,Province.HUE,SeatType.SOFT_SEAT_WITH_AC,"1");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
         homePage.createActiveAccount(homePage, testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-	    LoginPage loginPage = homePage.gotoLoginPage();
+	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
 	    
 	    System.out.println("2. Login with a valid account");
 	    homePage = loginPage.login(testAccount);
         
         System.out.println("3. Click on 'Book ticket' tab");
-        BookTicketPage bookTicketPage = homePage.gotoBookTicketPage();
+        BookTicketPage bookTicketPage = homePage.gotoPage(TabMenu.BOOK_TICKET,BookTicketPage.class);
         
         System.out.println("4. Select the next 2 days from 'Depart date'");        
         System.out.println("5. Select Depart from 'Nha Trang' and Arrive at 'Huế'");
@@ -55,21 +58,21 @@ public class BookTicketTest extends TestBase {
     @Test
     public void TC13_UserCanBookManyTicketsAtATime() {
     	System.out.println("TC13 - User can book many tickets at a time");
-        final Account testAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
-        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(25), "Nha Trang", "Sài Gòn", "Soft seat with air conditioner", "5");
+        final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
+        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(25), Province.NHA_TRANG, Province.SAI_GON, SeatType.SOFT_SEAT_WITH_AC, "5");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
         homePage.createActiveAccount(homePage, testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-        LoginPage loginPage = homePage.gotoLoginPage();
+        LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
         
         System.out.println("2. Login with a valid account");
         homePage = loginPage.login(testAccount);
         
         System.out.println("3. Click on 'Book ticket' tab");
-        BookTicketPage bookTicketPage = homePage.gotoBookTicketPage();
+        BookTicketPage bookTicketPage = homePage.gotoPage(TabMenu.BOOK_TICKET,BookTicketPage.class);
         
         System.out.println("4. Select the next 25 days from 'Depart date'");
         System.out.println("5. Select Depart from 'Nha Trang' and Arrive at 'Sài Gòn'");
@@ -97,7 +100,7 @@ public class BookTicketTest extends TestBase {
     @Test
     public void TC14_UserCanCheckPriceOfTicketFromTimetable() {
     	System.out.println("TC14 - User can check price of ticket from Timetable");
-        final Account testAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
+        final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
         final TicketPrice expectedTicketPrice = new TicketPrice("310000","335000","360000","410000","460000","510000");
         final String expectedRoute = "Ticket price from Đà Nẵng to Sài Gòn"; 
         
@@ -105,13 +108,13 @@ public class BookTicketTest extends TestBase {
         homePage.createActiveAccount(homePage, testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-        LoginPage loginPage = homePage.gotoLoginPage();
+        LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
         
         System.out.println("2. Login with a valid account");
         homePage = loginPage.login(testAccount);
         
         System.out.println("3. Click on 'Timetable' tab");
-        TimetablePage timetablePage = homePage.gotoTimetablePage();
+        TimetablePage timetablePage = homePage.gotoPage(TabMenu.TIMETABLE,TimetablePage.class);
         
         System.out.println("4. Click on 'check price' link of the route from 'Đà Nẵng' to 'Sài Gòn'");
         TicketPricePage ticketPricePage = timetablePage.clickCheckPriceForRoute();
@@ -135,21 +138,21 @@ public class BookTicketTest extends TestBase {
     @Test
     public void TC15_UserCanBookTicketFromTimetable() {
     	System.out.println("TC15 - User can book ticket from Timetable");
-        final Account testAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
-        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(4), "Quảng Ngãi", "Huế", "", "5");
+        final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
+        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(4), Province.QUANG_NGAI, Province.HUE, null, "5");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
         homePage.createActiveAccount(homePage, testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-        LoginPage loginPage = homePage.gotoLoginPage();
+        LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
         
         System.out.println("2. Login with a valid account");
         homePage = loginPage.login(testAccount);
         
         System.out.println("3. Click on 'Timetable' tab");
-        TimetablePage timetablePage = homePage.gotoTimetablePage();
+        TimetablePage timetablePage = homePage.gotoPage(TabMenu.TIMETABLE,TimetablePage.class);
         
         System.out.println("4. Click on book ticket of route 'Quảng Ngãi' to 'Huế'");
         BookTicketPage bookTicketPage = timetablePage.clickBookTicketForRoute();
@@ -163,14 +166,14 @@ public class BookTicketTest extends TestBase {
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
         
         Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
-            "Success message not displayed. Actual: " + successMessage);
+            "Success message not displayed. " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
         
         BookTicket actualBookTicket = new BookTicket();
         actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
         
-        expectedBookTicket.setSeatType(Constant.DEFAULT_SEATTYPE);
+        expectedBookTicket.setSeatType(SeatType.fromDisplayName(Constant.DEFAULT_SEATTYPE));
         Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
         
         System.out.println("TC15 PASSED - User can book ticket from Timetable");
@@ -179,12 +182,12 @@ public class BookTicketTest extends TestBase {
     @Test
     public void TC16_UserCanCancelATicket() {
     	System.out.println("TC16 - User can cancel a ticket");
-        final Account testAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
+        final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
         final BookTicket bt = new BookTicket(
             Utilities.convertDateToStringFromToday(2 + Constant.DEPART_DAY),
-            "Nha Trang", 
-            "Huế", 
-            "Soft bed with air conditioner", 
+            Province.NHA_TRANG, 
+            Province.HUE, 
+            SeatType.SOFT_SEAT_WITH_AC, 
             "1"
         );
 
@@ -192,17 +195,17 @@ public class BookTicketTest extends TestBase {
         homePage.createActiveAccount(homePage, testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-        LoginPage loginPage = homePage.gotoLoginPage();
+        LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
         
         System.out.println("2. Login with a valid account");
         homePage = loginPage.login(testAccount);
         
         System.out.println("3. Book a ticket");
-        BookTicketPage bookTicketPage = homePage.gotoBookTicketPage();
+        BookTicketPage bookTicketPage = homePage.gotoPage(TabMenu.BOOK_TICKET,BookTicketPage.class);
         bookTicketPage = bookTicketPage.bookTicket(bt);
         
         System.out.println("4. Click on 'My ticket' tab");
-        MyTicketPage myTicketPage = homePage.gotoMyTicketPage();
+        MyTicketPage myTicketPage = homePage.gotoPage(TabMenu.MY_TICKET,MyTicketPage.class);
         
         System.out.println("5. Click on 'Cancel' button of ticket which user want to cancel");
         myTicketPage = myTicketPage.clickCancelTicketByDetails(bt);

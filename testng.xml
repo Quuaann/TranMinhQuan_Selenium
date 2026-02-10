@@ -7,63 +7,12 @@
     	<parameter name="browser" value="chrome"/>
         <parameter name="url" value="http://railway.somee.com"/>
         <classes>
-            <class name="Railway.LoginTest">
-                <methods>
-                    <include name="TC01_LoginWithValidUsernameAndPassword"/>
-                    <include name="TC02_LoginWithBlankPassword"/>
-                    <include name="TC03_LoginWithInvalidPassword"/>
-					<include name="TC04_LoginWithMultipleWrongPasswordAttempts"/>
-					<include name="TC05_LoginWithNotActivatedAccount"/>
-					<include name="TC06_RedirectToHomeAfterLogout"/>
-                </methods>
-            </class>
+            <class name="Railway.LoginTest"></class>
+            <class name="Railway.RegisterTest"></class>
+            <class name="Railway.ResetPasswordTest"></class>
+            <class name="Railway.BookTicketTest"></class>
         </classes>
     </test>
-    
-    <!-- Test 2: Register Tests -->
-    <test name="Register Tests">
-        <classes>
-            <class name="Railway.RegisterTest">
-                <methods>
-                    <include name="TC07_CannotCreateAccountWithExistingEmail"/>
-                    <include name="TC08_RegisterWithEmptyPasswordAndPID"/>
-                    <include name="TC09_CreateAndActivateAccount"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    
-    <!-- Test 3: Reset Password Tests -->
-    <test name="Reset Password Tests" preserve-order="true">
-        <parameter name="browser" value="chrome"/>
-        <parameter name="url" value="http://railway.somee.com"/>
-        
-        <classes>
-            <class name="Railway.ResetPasswordTest">
-                <methods>
-                    <include name="TC10_ResetPasswordShowsErrorIfTheSamePassword"/>
-                    <include name="TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    
-    
-    <!-- Test 4: Book Ticket Tests -->
-    <test name="Book Ticket Tests" preserve-order="true">
-        <classes>
-            <class name="Railway.BookTicketTest">
-                <methods>
-                    <include name="TC12_UserCanBookOneTicketAtATime"/>
-                    <include name="TC13_UserCanBookManyTicketsAtATime"/>
-                    <include name="TC14_UserCanCheckPriceOfTicketFromTimetable"/>
-                    <include name="TC15_UserCanBookTicketFromTimetable"/>
-                    <include name="TC16_UserCanCancelATicket"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    
     
     <!-- Run tests in parallel -->
     <!-- <suite name="Parallel Tests" parallel="tests" thread-count="3"> -->

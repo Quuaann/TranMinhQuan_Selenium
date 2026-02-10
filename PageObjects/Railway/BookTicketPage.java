@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.Province;
+import Constant.SeatType;
 import DataObject.BookTicket;
 
 public class BookTicketPage extends GeneralPage{
@@ -63,14 +65,14 @@ public class BookTicketPage extends GeneralPage{
     	dropdownDepartDate.selectByVisibleText(bt.getDepartDate());
     	
     	Select dropdownDepartFrom = new Select(getTxtDepartFrom());
-    	dropdownDepartFrom.selectByVisibleText(bt.getDepartFrom());
+    	dropdownDepartFrom.selectByVisibleText(bt.getDepartFrom().toString());
     	
     	Utilities.waitUntilStale(getTxtArriveAt());
     	Select dropdownArriveAt = new Select(getTxtArriveAt());
-    	dropdownArriveAt.selectByVisibleText(bt.getArriveAt());
+    	dropdownArriveAt.selectByVisibleText(bt.getArriveAt().toString());
 
     	Select dropdownSeatType = new Select(getTxtSeatType());
-    	dropdownSeatType.selectByVisibleText(bt.getSeatType());
+    	dropdownSeatType.selectByVisibleText(bt.getSeatType().toString());
     	
     	Select dropdownTicketAmount = new Select(getTxtTicketAmount());
     	dropdownTicketAmount.selectByVisibleText(bt.getTicketAmount());
@@ -135,9 +137,9 @@ public class BookTicketPage extends GeneralPage{
         
         if (cells.size() >= 8) {
             // Gán giá trị từ bảng vào đối tượng BookTicket
-            bt.setDepartFrom(cells.get(0).getText().trim());
-            bt.setArriveAt(cells.get(1).getText().trim());
-            bt.setSeatType(cells.get(2).getText().trim());
+            bt.setDepartFrom(Province.fromVietnameseName(cells.get(0).getText().trim()));
+            bt.setArriveAt(Province.fromVietnameseName(cells.get(1).getText().trim()));
+            bt.setSeatType(SeatType.fromDisplayName(cells.get(2).getText().trim()));
             bt.setDepartDate(cells.get(3).getText().trim());
             bt.setTicketAmount(cells.get(6).getText().trim());
         }

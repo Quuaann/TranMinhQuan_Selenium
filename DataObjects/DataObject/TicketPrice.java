@@ -8,10 +8,8 @@ public class TicketPrice {
     private String SB;  // Soft Bed
     private String SBC; // Soft Bed with Air Conditioner
     
-    // Constructor mặc định
     public TicketPrice() {}
     
-    // Constructor với tất cả giá
     public TicketPrice(String HS, String SS, String SSC, String HB, String SB, String SBC) {
         this.HS = HS;
         this.SS = SS;

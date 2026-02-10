@@ -1,5 +1,7 @@
 package Railway;
 
+import java.time.Duration;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,6 +28,7 @@ public class TestBase {
         System.out.println("Pre-condition");
         
         Constant.WEBDRIVER = new ChromeDriver();
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Constant.WEBDRIVER.manage().window().maximize();
         
     }

@@ -1,11 +1,14 @@
 package DataObject;
 
+import Constant.Province;
+import Constant.SeatType;
+
 public class BookTicket {
 	
 	private String departDate;
-    private String departFrom;
-    private String arriveAt;
-    private String seatType;
+    private Province departFrom;
+    private Province arriveAt;
+    private SeatType seatType;
     private String ticketAmount;
     
 	public String getDepartDate() {
@@ -14,22 +17,22 @@ public class BookTicket {
 	public void setDepartDate(String departDate) {
 		this.departDate = departDate;
 	}
-	public String getDepartFrom() {
+	public Province getDepartFrom() {
 		return departFrom;
 	}
-	public void setDepartFrom(String departFrom) {
+	public void setDepartFrom(Province departFrom) {
 		this.departFrom = departFrom;
 	}
-	public String getArriveAt() {
+	public Province getArriveAt() {
 		return arriveAt;
 	}
-	public void setArriveAt(String arriveAt) {
+	public void setArriveAt(Province arriveAt) {
 		this.arriveAt = arriveAt;
 	}
-	public String getSeatType() {
+	public SeatType getSeatType() {
 		return seatType;
 	}
-	public void setSeatType(String seatType) {
+	public void setSeatType(SeatType seatType) {
 		this.seatType = seatType;
 	}
 	public String getTicketAmount() {
@@ -40,17 +43,15 @@ public class BookTicket {
 	}
 	
 	public BookTicket() {
-        // Khởi tạo với giá trị mặc định
         this.departDate = "";
-        this.departFrom = "";
-        this.arriveAt = "";
-        this.seatType = "";
+        this.departFrom = Province.SAI_GON;
+        this.arriveAt = Province.PHAN_THIET;
+        this.seatType = SeatType.HARD_SEAT;
         this.ticketAmount = "1";
     }
     
-    // Constructor với tất cả tham số
-    public BookTicket(String departDate, String departFrom, String arriveAt, 
-                        String seatType, String ticketAmount) {
+    public BookTicket(String departDate, Province departFrom, Province arriveAt, 
+    		SeatType seatType, String ticketAmount) {
         this.departDate = departDate;
         this.departFrom = departFrom;
         this.arriveAt = arriveAt;
@@ -61,9 +62,9 @@ public class BookTicket {
     public String getText() {
         return String.format("DepartDate: %s, DepartFrom: %s, ArriveAt: %s, SeatType: %s, TicketAmount: %s",
             getValueOrEmpty(departDate),
-            getValueOrEmpty(departFrom),
-            getValueOrEmpty(arriveAt),
-            getValueOrEmpty(seatType),
+            getValueOrEmpty(departFrom.toString()),
+            getValueOrEmpty(arriveAt.toString()),
+            getValueOrEmpty(seatType.toString()),
             getValueOrEmpty(ticketAmount));
     }
     

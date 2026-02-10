@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Constant.Constant;
+import Constant.TabMenu;
 import DataObject.Account;
 import Guerrillamail.MailFake;
 
@@ -12,7 +13,7 @@ public class ResetPasswordTest extends TestBase {
 	@Test
 	public void TC10_ResetPasswordShowsErrorIfTheSamePassword() {
 	    System.out.println("TC10 - Reset password shows error if user resets password with new password same as old password");
-	    final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
+	    final Account newAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
 	    final String newPassword = "123456789";
 	    final String expectedErrorMsg = "The new password cannot be the same as the current password";
 	    
@@ -20,7 +21,7 @@ public class ResetPasswordTest extends TestBase {
 		homePage.createActiveAccount(homePage, newAccount);
 	    
 	    System.out.println("1. Navigate to QA Railway Login page");
-	    LoginPage loginPage = homePage.gotoLoginPage();
+	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
 	    
 	    System.out.println("2. Click on 'Forgot Password page' link");
 	    ResetPasswordPage forgotPasswordPage = loginPage.gotoForgotPasswordPage();
@@ -59,7 +60,7 @@ public class ResetPasswordTest extends TestBase {
 	
 	@Test
     public void TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords() {
-        final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
+        final Account newAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
         final String newPassword = "123456789";
         final String confirmPassword = "987654321";
                 
@@ -71,7 +72,7 @@ public class ResetPasswordTest extends TestBase {
 		homePage.createActiveAccount(homePage, newAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
-        LoginPage loginPage = homePage.gotoLoginPage();
+        LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
         
         System.out.println("2. Click on 'Forgot Password page' link");
         ResetPasswordPage forgotPasswordPage = loginPage.gotoForgotPasswordPage();
