@@ -7,24 +7,23 @@ import Constant.Constant;
 import DataObject.Account;
 import Guerrillamail.MailFake;
 
-public class ForgotPasswordTest extends TestBase {
+public class ResetPasswordTest extends TestBase {
     
 	@Test
-	public void TC10_ResetPasswordShowsErrorIf() {
+	public void TC10_ResetPasswordShowsErrorIfTheSamePassword() {
+	    System.out.println("TC10 - Reset password shows error if user resets password with new password same as old password");
 	    final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
 	    final String newPassword = "123456789";
-		
-	    System.out.println("TC10 - Reset password shows error if user resets password with new password same as old password");
-	    String expectedErrorMsg = "The new password cannot be the same as the current password";
+	    final String expectedErrorMsg = "The new password cannot be the same as the current password";
 	    
-	    System.out.println("Pre_Condition: Create and active new account");
+	    System.out.println("PRE-CONDITION: Create and active new account");
 		homePage.createActiveAccount(homePage, newAccount);
 	    
 	    System.out.println("1. Navigate to QA Railway Login page");
 	    LoginPage loginPage = homePage.gotoLoginPage();
 	    
 	    System.out.println("2. Click on 'Forgot Password page' link");
-	    ForgotPasswordPage forgotPasswordPage = loginPage.gotoForgotPasswordPage();
+	    ResetPasswordPage forgotPasswordPage = loginPage.gotoForgotPasswordPage();
 	    
 	    System.out.println("3. Enter the email address of the activated account");
 	    System.out.println("   Email: " + newAccount.getEmail());	    
@@ -58,11 +57,11 @@ public class ForgotPasswordTest extends TestBase {
 	        "Error message is not displayed as expected");
 	    
 	    softAssert.assertAll();
-	    System.out.println("✅ TC10 PASSED");
+	    System.out.println("TC10 PASSED");
 	}
 	
 	@Test
-    public void TC11_ResetPasswordShowsErrorIfDifferentPasswords() {
+    public void TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords() {
         final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
         final String newPassword = "123456789";
         final String confirmPassword = "987654321";
@@ -73,14 +72,14 @@ public class ForgotPasswordTest extends TestBase {
         String expectedErrorMsg = "Could not reset password. Please correct the errors and try again.";
         String expectedError2Msg = "The password confirmation did not match the new password.";
         
-        System.out.println("=== PRE-CONDITION: Create and activate new account ===");
+        System.out.println("PRE-CONDITION: Create and activate new account");
 		homePage.createActiveAccount(homePage, newAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
         LoginPage loginPage = homePage.gotoLoginPage();
         
         System.out.println("2. Click on 'Forgot Password page' link");
-        ForgotPasswordPage forgotPasswordPage = loginPage.gotoForgotPasswordPage();
+        ResetPasswordPage forgotPasswordPage = loginPage.gotoForgotPasswordPage();
         
         System.out.println("3. Enter the email address of the activated account");
         System.out.println("   Email: " + newAccount.getEmail());
@@ -120,6 +119,6 @@ public class ForgotPasswordTest extends TestBase {
             "Error message 'The password confirmation did not match the new password.' is not displayed as expected");
         
         softAssert.assertAll();
-        System.out.println("✅ TC11 PASSED");
+        System.out.println("TC11 PASSED");
     }
 }

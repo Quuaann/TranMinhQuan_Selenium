@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import Common.Utilities;
 import Constant.Constant;
 
-public class TimetablePage {
+public class TimetablePage extends GeneralPage{
     
     // Locators
     private final By _linkCheckPriceSgDn = By.xpath("//tr[td[2][text()='Đà Nẵng'] and td[3][text()='Sài Gòn']]//a[contains(@href, 'TicketPrice')]");

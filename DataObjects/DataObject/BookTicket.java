@@ -57,21 +57,18 @@ public class BookTicket {
         this.seatType = seatType;
         this.ticketAmount = ticketAmount;
     }
+
+    public String getText() {
+        return String.format("DepartDate: %s, DepartFrom: %s, ArriveAt: %s, SeatType: %s, TicketAmount: %s",
+            getValueOrEmpty(departDate),
+            getValueOrEmpty(departFrom),
+            getValueOrEmpty(arriveAt),
+            getValueOrEmpty(seatType),
+            getValueOrEmpty(ticketAmount));
+    }
     
-//    public void setDepartDate(String dateStr) {
-//        try {
-//            Date inputDate = new SimpleDateFormat("dd/MM/yyyy").parse(dateStr);
-//            Date today = new Date();
-//            
-//            // Reset cả 2 về 00:00:00 để chỉ so sánh ngày
-//            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//            Date inputDateOnly = sdf.parse(sdf.format(inputDate));
-//            Date todayOnly = sdf.parse(sdf.format(today));
-//            
-//            this.departDate = (int) ((inputDateOnly.getTime() - todayOnly.getTime()) / 86400000);
-//        } catch (Exception e) {
-//            this.departDate = null;
-//        }
-//    }
+    private String getValueOrEmpty(String value) {
+        return value != null ? value : "";
+    }
     
 }

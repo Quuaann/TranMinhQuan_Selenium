@@ -10,7 +10,7 @@ import Common.Utilities;
 import Constant.Constant;
 import DataObject.BookTicket;
 
-public class BookTicketPage {
+public class BookTicketPage extends GeneralPage{
 	
 	// Locators
     private final By _txtDepartDate = By.xpath("//select[@name='Date']");

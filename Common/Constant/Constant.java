@@ -21,7 +21,7 @@ public class Constant {
 	
 	public static final Integer TIMEOUT = 20;
 	
-
+	public static final String DEFAULT_SEATTYPE = "Hard seat";
 	
 }
 

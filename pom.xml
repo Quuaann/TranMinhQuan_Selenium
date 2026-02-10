@@ -55,14 +55,6 @@
         <version>5.8.0</version>
     </dependency>
     
-    <!-- JUnit cho testing -->
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <version>5.10.0</version>
-        <scope>test</scope>
-    </dependency>
-    
     <dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>

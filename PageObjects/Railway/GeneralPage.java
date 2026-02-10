@@ -17,7 +17,8 @@ public class GeneralPage {
     private final By tabBookTicket = By.xpath("//div[@id='menu']//a[@href='/Page/BookTicketPage.cshtml']");
     private final By tabTimetable = By.xpath("//div[@id='menu']//a[@href='TrainTimeListPage.cshtml']");
     private final By tabTicketPrice = By.xpath("//div[@id='menu']//a[@href='/Page/TrainPriceListPage.cshtml']");
-
+    private final By tabMyTicket = By.xpath("//div[@id='menu']//a[@href='/Page/ManageTicket.cshtml']");
+    
     protected WebElement getTabLogin() {
         return Constant.WEBDRIVER.findElement(tabLogin);
     }
@@ -48,6 +49,10 @@ public class GeneralPage {
     
     protected WebElement getTabTicketPrice() {
         return Constant.WEBDRIVER.findElement(tabTicketPrice);
+    }
+    
+    protected WebElement getTabMyTicket() {
+        return Constant.WEBDRIVER.findElement(tabMyTicket);
     }
 
     // Methods
@@ -88,6 +93,11 @@ public class GeneralPage {
     public TicketPricePage gotoTicketPricePage() {
         this.getTabTicketPrice().click();
         return new TicketPricePage();
+    }
+    
+    public MyTicketPage gotoMyTicketPage() {
+        this.getTabMyTicket().click();
+        return new MyTicketPage();
     }
     
     // From TC07

@@ -101,10 +101,10 @@ public class LoginPage extends GeneralPage {
         }
     }
     
-    public ForgotPasswordPage gotoForgotPasswordPage() {
+    public ResetPasswordPage gotoForgotPasswordPage() {
     	Utilities.scrollToElement(_linkForgotPassword);
     	this.getLinkForgotPassword().click();
-    	return new ForgotPasswordPage();
+    	return new ResetPasswordPage();
     }
     
     public boolean isResetSuccess() {

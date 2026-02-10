@@ -8,17 +8,12 @@ import Constant.Constant;
 import DataObject.Account;
 
 public class LoginTest extends TestBase {
-	
-	
-	
-	
-	
 
 	@Test
 	public void TC01_LoginWithValidUsernameAndPassword() {
+		System.out.println("TC01 - User can log into Railway with valid username and password");
 		final Account validAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
-	    System.out.println("TC01 - User can log into Railway with valid username and password");
-	    String expectedMsg = "Welcome " + validAccount.getEmail();
+	    final String expectedMsg = "Welcome " + validAccount.getEmail();
 
 	    System.out.println("1. Navigate to QA Railway Website");
 	    homePage.open();
@@ -27,22 +22,20 @@ public class LoginTest extends TestBase {
 	    LoginPage loginPage = homePage.gotoLoginPage();
 
 	    System.out.println("3. Enter valid username and password");
-	    System.out.println("   Email: " + validAccount.getEmail());
-	    System.out.println("   Password: " + validAccount.getPassword());
 	    homePage = loginPage.login(validAccount);
 
 	    System.out.println("4. Verify user is logged in");
 	    String actualMsg = homePage.getWelcomeMessage();
 	    
 	    Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
-	    System.out.println("✅ TC01 PASSED");
+	    System.out.println("TC01 PASSED");
 	}
 
 	@Test
 	public void TC02_LoginWithBlankPassword() {
+		System.out.println("TC02 - User cannot login with blank Password");
 		final Account blankPasswordAccount = new Account(Constant.USERNAME, "", Constant.PID);
-	    System.out.println("TC02 - User cannot login with blank Password");
-	    String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
+	    final String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
 
 	    System.out.println("1. Navigate to QA Railway Website");
 	    homePage.open();
@@ -51,9 +44,6 @@ public class LoginTest extends TestBase {
 	    LoginPage loginPage = homePage.gotoLoginPage();
 
 	    System.out.println("3. User enters valid username but leaves password blank");
-	    System.out.println("   Email: " + blankPasswordAccount.getEmail());
-	    System.out.println("   Password: [BLANK]");
-	    
 	    System.out.println("4. Click on 'Login' button");
 	    loginPage = loginPage.login(blankPasswordAccount);
 	    
@@ -61,14 +51,14 @@ public class LoginTest extends TestBase {
 	    String actualMsg = loginPage.getLblLoginErrorMsg().getText();
 
 	    Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected.");
-	    System.out.println("✅ TC02 PASSED");
+	    System.out.println("TC02 PASSED");
 	}
 
 	@Test
 	public void TC03_LoginWithInvalidPassword() {
-		final Account invalidPasswordAccount = new Account(Constant.USERNAME, Constant.WRONG_PASSWORD, Constant.PID);
 	    System.out.println("TC03 - User cannot log into Railway with invalid password");
-	    String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
+		final Account invalidPasswordAccount = new Account(Constant.USERNAME, Constant.WRONG_PASSWORD, Constant.PID);
+	    final String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
 
 	    System.out.println("1. Navigate to QA Railway Website");
 	    homePage.open();
@@ -77,23 +67,21 @@ public class LoginTest extends TestBase {
 	    LoginPage loginPage = homePage.gotoLoginPage();
 
 	    System.out.println("3. Enter valid Email and invalid Password");
-	    System.out.println("   Email: " + invalidPasswordAccount.getEmail());
-	    System.out.println("   Password: " + invalidPasswordAccount.getPassword());
 	    loginPage = loginPage.login(invalidPasswordAccount);
 
 	    System.out.println("Verify error message is displayed");
 	    String actualMsg = loginPage.getLblLoginErrorMsg().getText();
 
 	    Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected.");
-	    System.out.println("✅ TC03 PASSED");
+	    System.out.println("TC03 PASSED");
 	}
 
 	@Test
 	public void TC04_LoginWithMultipleWrongPasswordAttempts() {
-		final Account invalidPasswordAccount = new Account(Constant.USERNAME, Constant.WRONG_PASSWORD, Constant.PID);
 	    System.out.println("TC04 - System shows message when user enters wrong password many times");
-	    String expectedFirstMsg = "Invalid username or password. Please try again";
-	    String expectedSecondMsg = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
+		final Account invalidPasswordAccount = new Account(Constant.USERNAME, Constant.WRONG_PASSWORD, Constant.PID);
+	    final String expectedFirstMsg = "Invalid username or password. Please try again";
+	    final String expectedSecondMsg = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
 
 	    SoftAssert softAssert = new SoftAssert();
 
@@ -104,9 +92,6 @@ public class LoginTest extends TestBase {
 	    LoginPage loginPage = homePage.gotoLoginPage();
 	    
 	    System.out.println("3. Enter valid information into 'Username'textbox except 'Password' textbox.");
-	    System.out.println("   Email: " + invalidPasswordAccount.getEmail());
-	    System.out.println("   Password: " + invalidPasswordAccount.getPassword());
-	    
 	    System.out.println("4. Click on 'Login' button");
 	    loginPage = loginPage.login(invalidPasswordAccount);
 	    
@@ -129,14 +114,14 @@ public class LoginTest extends TestBase {
 	        "Attempt limit warning message is not displayed");
 	    
 	    softAssert.assertAll();
-	    System.out.println("✅ TC04 PASSED");
+	    System.out.println("TC04 PASSED");
 	}
 
 	@Test
 	public void TC05_LoginWithNotActivatedAccount() {
-		final Account notActivatedAccount = new Account(Constant.NOT_ACTIVATED_USERNAME, Constant.NOT_ACTIVATED_PASSWORD, Constant.PID);
 	    System.out.println("TC05 - User can't login with an account hasn't been activated");
-	    String expectedMsg = "Invalid username or password. Please try again";
+		final Account notActivatedAccount = new Account(Constant.NOT_ACTIVATED_USERNAME, Constant.NOT_ACTIVATED_PASSWORD, Constant.PID);
+		final String expectedMsg = "Invalid username or password. Please try again";
 	    
 	    System.out.println("1. Navigate to QA Railway Website");
 	    homePage.open();
@@ -145,9 +130,6 @@ public class LoginTest extends TestBase {
 	    LoginPage loginPage = homePage.gotoLoginPage();
 
 	    System.out.println("3. Enter username and password of not-activated account");
-	    System.out.println("   Email: " + notActivatedAccount.getEmail());
-	    System.out.println("   Password: " + notActivatedAccount.getPassword());
-	    
 	    System.out.println("4. Click on 'Login' button");
 	    loginPage = loginPage.login(notActivatedAccount);
 
@@ -156,21 +138,19 @@ public class LoginTest extends TestBase {
 	    
 	    Assert.assertTrue(actualMsg.contains(expectedMsg), 
 	        "Error message for not-activated account is not displayed correctly");
-	    System.out.println("✅ TC05 PASSED");
+	    System.out.println("TC05 PASSED");
 	}
 
 	@Test
 	public void TC06_RedirectToHomeAfterLogout() {
-		final Account validAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
 	    System.out.println("TC06 - User is redirected to Home after logout");
+		final Account validAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
 	    
 	    System.out.println("1. Navigate to QA Railway Website");    
 	    homePage.open();
 	    LoginPage loginPage = homePage.gotoLoginPage();
 	    
 	    System.out.println("2. Login with valid Email and Password");
-	    System.out.println("   Email: " + validAccount.getEmail());
-	    System.out.println("   Password: " + validAccount.getPassword());
 	    homePage = loginPage.login(validAccount);
 	    
 	    System.out.println("3. Click on 'FAQ' tab");
@@ -184,6 +164,6 @@ public class LoginTest extends TestBase {
 
 	    Assert.assertTrue(isHomePageDisplayed, 
 	        "Home page is not displayed.");
-	    System.out.println("✅ TC06 PASSED");
+	    System.out.println("TC06 PASSED");
 	}
 }

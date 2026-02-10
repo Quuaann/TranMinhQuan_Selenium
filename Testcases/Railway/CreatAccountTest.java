@@ -12,9 +12,9 @@ public class CreatAccountTest extends TestBase {
 
     @Test
     public void TC07_CannotCreateAccountWithExistingEmail() {
-    	final Account existingAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
         System.out.println("TC07 - User can't create account with existing email");
-        String expectedMsg = "This email address is already in use.";
+    	final Account existingAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
+        final String expectedMsg = "This email address is already in use.";
         
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
@@ -23,10 +23,6 @@ public class CreatAccountTest extends TestBase {
         RegisterPage registerPage = homePage.gotoRegisterPage();
         
         System.out.println("3. Enter information of the existing account");
-        System.out.println("   Email: " + existingAccount.getEmail());
-        System.out.println("   Password: " + existingAccount.getPassword());
-        System.out.println("   PID: " + existingAccount.getPid());
-        
         System.out.println("4. Click on 'Register' button");
         registerPage.enterRegistrationInfo(existingAccount); 
         
@@ -36,16 +32,16 @@ public class CreatAccountTest extends TestBase {
         Assert.assertTrue(actualMsg.contains(expectedMsg), 
             "Error message for existing email is not displayed.");
         
-        System.out.println("✅ TC07 PASSED: Cannot register with existing email");
+        System.out.println("TC07 PASSED: Cannot register with existing email");
     }
 
     @Test
     public void TC08_RegisterWithEmptyPasswordAndPID() {
-    	final Account invalidAccount = new Account(Constant.NEWUSER_MAIL, "", "");
         System.out.println("TC08C - User can't create account while password and PID fields are empty");
-        String expectedGeneralMsg = "There're errors in the form. Please correct the errors and try again.";
-        String expectedPwdMsg = "Invalid password length";
-        String expectedPidMsg = "Invalid ID length";
+    	final Account invalidAccount = new Account(Constant.NEWUSER_MAIL, "", "");
+    	final String expectedGeneralMsg = "There're errors in the form. Please correct the errors and try again.";
+    	final String expectedPwdMsg = "Invalid password length";
+    	final String expectedPidMsg = "Invalid ID length";
 
         SoftAssert softAssert = new SoftAssert();
         
@@ -56,10 +52,6 @@ public class CreatAccountTest extends TestBase {
         RegisterPage registerPage = homePage.gotoRegisterPage();
         
         System.out.println("3. Enter valid email address and leave other fields empty");
-        System.out.println("   Email: " + invalidAccount.getEmail());
-        System.out.println("   Password: " + invalidAccount.getPassword());
-        System.out.println("   PID: " + invalidAccount.getPid());
-        
         registerPage.enterRegistrationInfo(invalidAccount);
                 
         System.out.println("Verify general error message");
@@ -82,13 +74,13 @@ public class CreatAccountTest extends TestBase {
         
         softAssert.assertAll();
         
-        System.out.println("✅ TC08 PASSED");
+        System.out.println("TC08 PASSED");
     }
     
     @Test
     public void TC09_CreateAndActivateAccount() {
+    	System.out.println("TC09 - User create and activate account");
     	final Account newAccount = new Account(Constant.NEWUSER_MAIL, Constant.PASSWORD, Constant.PID);
-        System.out.println("TC09 - User create and activate account");
         SoftAssert softAssert = new SoftAssert();
         
         System.out.println("1. Navigate to QA Railway Website");
@@ -110,11 +102,6 @@ public class CreatAccountTest extends TestBase {
             "User is not redirected to Register page");
         
         System.out.println("3. Enter valid information into all fields");
-        System.out.println("   Email: " + newAccount.getEmail());
-        System.out.println("   Password: " + newAccount.getPassword());
-        System.out.println("   Confirm Password: " + newAccount.getPassword());
-        System.out.println("   PID: " + newAccount.getPid());
-        
         System.out.println("4. Click on 'Register' button");
         registerPage.enterRegistrationInfo(newAccount);
                 
@@ -140,6 +127,6 @@ public class CreatAccountTest extends TestBase {
                 "Active email success to Register page");
         
         softAssert.assertAll();
-        System.out.println("✅ TC09 PASSED");
+        System.out.println("TC09 PASSED");
     }
 }

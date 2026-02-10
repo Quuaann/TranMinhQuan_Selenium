@@ -6,8 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import Constant.Constant;
+import DataObject.TicketPrice;
 
-public class TicketPricePage {
+public class TicketPricePage extends GeneralPage{
 	
 	// Locators
     private final By _selectedTicketPrice = By.xpath("//li[@class='selected']//span[text()='Ticket price']");
@@ -28,15 +29,14 @@ public class TicketPricePage {
     }
     
     // Methods
-    public String getTxtTicketTableCell(int td) {
-
+    public TicketPrice getTxtTicketTableCell(TicketPrice ticketPrice) {
+    	
         WebElement lastRow = getLastTicketPrice();
-        
         List<WebElement> cells = lastRow.findElements(By.tagName("td"));
-        
-        if (cells.size() >= 6) {
-        	return cells.get(td).getText().trim();
-        }
-        return "";
+        if (cells.size() >= 6)
+        	for (int i = 0; i<6; i++) {
+	        	ticketPrice.setPriceByIndex(i, cells.get(i).getText().trim());
+	        }
+        return ticketPrice;
     }
 }
