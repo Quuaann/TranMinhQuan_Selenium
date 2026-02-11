@@ -56,8 +56,6 @@ public class MailFake {
     }
 	
 	public WebElement getBodyEmail() {
-        System.out.println("Test :"+_bodyEmail );
-
         return Constant.WEBDRIVER.findElement(_bodyEmail);
     }
 	
@@ -65,7 +63,6 @@ public class MailFake {
 	public String getToken() {
 		Utilities.waitForVisible(_bodyEmail);
 		String emailContent = this.getBodyEmail().getText();
-		System.out.println(emailContent);
 		if (emailContent.contains("The token is: ")) {
 	        String[] parts = emailContent.split("The token is: ");
 	        if (parts.length > 1) {

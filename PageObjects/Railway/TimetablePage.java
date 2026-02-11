@@ -5,32 +5,62 @@ import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.Province;
 
 public class TimetablePage extends GeneralPage{
     
-    // Locators
-    private final By _linkCheckPriceSgDn = By.xpath("//tr[td[2][text()='Đà Nẵng'] and td[3][text()='Sài Gòn']]//a[contains(@href, 'TicketPrice')]");
-    private final By _linkBookTicketQnH = By.xpath("//tr[td[2][text()='Quảng Ngãi'] and td[3][text()='Huế']]//a[contains(@href, 'BookTicket')]");
+	// Locator
+    private final String timetableRowTemplate = "//table[@class='MyTable WideTable']//tr[td[2][normalize-space()='%s'] and td[3][normalize-space()='%s']]";
+
+    private final String checkPriceLinkTemplate = timetableRowTemplate + "//a[contains(@href, 'TicketPrice')]";
+    private final String bookTicketLinkTemplate = timetableRowTemplate + "//a[contains(@href, 'BookTicket')]";  
     
-    // Elements
-    public WebElement getLinkCheckPrice() {
-        return Constant.WEBDRIVER.findElement(_linkCheckPriceSgDn);
+    private By getCheckPriceLinkLocator(Province from, Province to) {
+        String fromName = from.getVietnameseName();
+        String toName = to.getVietnameseName();
+        String xpath = String.format(checkPriceLinkTemplate, fromName, toName);
+        return By.xpath(xpath);
     }
     
-    public WebElement getLinkBookTicket() {
-        return Constant.WEBDRIVER.findElement(_linkBookTicketQnH);
+    private By getBookTicketLinkLocator(Province from, Province to) {
+        String fromName = from.getVietnameseName();
+        String toName = to.getVietnameseName();
+        String xpath = String.format(bookTicketLinkTemplate, fromName, toName);
+        return By.xpath(xpath);
+    }
+    
+    private By getTimetableRowLocator(Province from, Province to) {
+        String fromName = from.getVietnameseName();
+        String toName = to.getVietnameseName();
+        String xpath = String.format(timetableRowTemplate, fromName, toName);
+        return By.xpath(xpath);
+    }
+    
+    // Elements
+    public WebElement getLinkCheckPrice(Province from, Province to) {
+        return Constant.WEBDRIVER.findElement(getCheckPriceLinkLocator(from, to));
+    }
+    
+    public WebElement getLinkBookTicket(Province from, Province to) {
+        return Constant.WEBDRIVER.findElement(getBookTicketLinkLocator(from, to));
+    }
+    
+    public WebElement getTimetableRow(Province from, Province to) {
+        return Constant.WEBDRIVER.findElement(getTimetableRowLocator(from, to));
     }
     
     // Methods
-    public TicketPricePage clickCheckPriceForRoute() {
-    	Utilities.scrollToElement(_linkCheckPriceSgDn);
-        this.getLinkCheckPrice().click();
+    public TicketPricePage clickCheckPriceForRoute(Province from, Province to) {
+        By locator = getCheckPriceLinkLocator(from, to);
+        Utilities.scrollToElement(locator);
+        Constant.WEBDRIVER.findElement(locator).click();
         return new TicketPricePage();
     }
     
-    public BookTicketPage clickBookTicketForRoute() {
-    	Utilities.scrollToElement(_linkBookTicketQnH);
-        this.getLinkBookTicket().click();
+    public BookTicketPage clickBookTicketForRoute(Province from, Province to) {
+        By locator = getBookTicketLinkLocator(from, to);
+        Utilities.scrollToElement(locator);
+        Constant.WEBDRIVER.findElement(locator).click();
         return new BookTicketPage();
     }
 }

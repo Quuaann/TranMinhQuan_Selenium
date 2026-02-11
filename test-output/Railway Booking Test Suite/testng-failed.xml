@@ -5,15 +5,30 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://railway.somee.com"/>
     <classes>
+      <class name="Railway.BookTicketTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="TC16_UserCanCancelATicket"/>
+          <include name="beforeSuite"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.BookTicketTest -->
       <class name="Railway.ResetPasswordTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords"/>
           <include name="beforeSuite"/>
           <include name="TC10_ResetPasswordShowsErrorIfTheSamePassword"/>
           <include name="afterMethod"/>
         </methods>
       </class> <!-- Railway.ResetPasswordTest -->
+      <class name="Railway.LoginTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="beforeSuite"/>
+          <include name="afterMethod"/>
+          <include name="TC04_LoginWithMultipleWrongPasswordAttempts"/>
+        </methods>
+      </class> <!-- Railway.LoginTest -->
     </classes>
   </test> <!-- Login Tests(failed) -->
 </suite> <!-- Failed suite [Railway Booking Test Suite] -->

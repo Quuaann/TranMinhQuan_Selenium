@@ -50,6 +50,6 @@ public class TestBase {
     public void afterMethod() {
         System.out.println("Post-condition\n");
         
-        //Constant.WEBDRIVER.quit();
+        Constant.WEBDRIVER.quit();
     }
 }

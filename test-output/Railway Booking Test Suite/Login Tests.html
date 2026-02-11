@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Login Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>13/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 11 13:15:19 ICT 2026</td>
+<td>Started on:</td><td>Wed Feb 11 14:33:01 ICT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>177 seconds (177334 ms)</td>
+<tr><td>Total time:</td><td>982 seconds (982668 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword()'><b>TC10_ResetPasswordShowsErrorIfTheSamePassword</b><br>Test class: Railway.ResetPasswordTest</td>
-<td><div><pre>java.lang.AssertionError: User was redirected away from reset password page or Form &apos;Password Change Form&apos; is not shown with the reset password token expected [true] but found [false]
-	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:41)
+<td title='Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts()'><b>TC04_LoginWithMultipleWrongPasswordAttempts</b><br>Test class: Railway.LoginTest</td>
+<td><div><pre>java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+	at Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts(LoginTest.java:99)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace670283478", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace670283478'><pre>java.lang.AssertionError: User was redirected away from reset password page or Form &apos;Password Change Form&apos; is not shown with the reset password token expected [true] but found [false]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2128195220", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2128195220'><pre>java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:41)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts(LoginTest.java:99)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -113,19 +115,21 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>105</td>
-<td>Railway.ResetPasswordTest@399c4be1</td></tr>
+<td>8</td>
+<td>Railway.LoginTest@49e5f737</td></tr>
 <tr>
-<td title='Railway.ResetPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords()'><b>TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords</b><br>Test class: Railway.ResetPasswordTest</td>
-<td><div><pre>java.lang.AssertionError: User was redirected away from reset password page or Form &apos;Password Change Form&apos; is not shown with the reset password token expected [true] but found [false]
-	at Railway.ResetPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords(ResetPasswordTest.java:84)
+<td title='Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword()'><b>TC10_ResetPasswordShowsErrorIfTheSamePassword</b><br>Test class: Railway.ResetPasswordTest</td>
+<td><div><pre>java.lang.AssertionError: Error message is not displayed as expected expected [The new password cannot be the same as the current password] but found [Password changed! Click here to login.]
+	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:50)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace534662976", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace534662976'><pre>java.lang.AssertionError: User was redirected away from reset password page or Form &apos;Password Change Form&apos; is not shown with the reset password token expected [true] but found [false]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1895203464", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1895203464'><pre>java.lang.AssertionError: Error message is not displayed as expected expected [The new password cannot be the same as the current password] but found [Password changed! Click here to login.]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at Railway.ResetPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentConfirmPasswords(ResetPasswordTest.java:84)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:50)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -153,8 +157,122 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>66</td>
-<td>Railway.ResetPasswordTest@399c4be1</td></tr>
+<td>71</td>
+<td>Railway.ResetPasswordTest@10aa41f2</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC16_UserCanCancelATicket()'><b>TC16_UserCanCancelATicket</b><br>Test class: Railway.BookTicketTest</td>
+<td><div><pre>java.lang.AssertionError: Cancelled ticket should no longer be in the list expected [false] but found [true]
+	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:195)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1554303114", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1554303114'><pre>java.lang.AssertionError: Cancelled ticket should no longer be in the list expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:195)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>151</td>
+<td>Railway.BookTicketTest@3af9c5b7</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Railway.RegisterTest.TC07_CannotCreateAccountWithExistingEmail()'><b>TC07_CannotCreateAccountWithExistingEmail</b><br>Test class: Railway.RegisterTest</td>
+<td></td>
+<td>6</td>
+<td>Railway.RegisterTest@c86b9e3</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC06_RedirectToHomeAfterLogout()'><b>TC06_RedirectToHomeAfterLogout</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>9</td>
+<td>Railway.LoginTest@49e5f737</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC14_UserCanCheckPriceOfTicketFromTimetable()'><b>TC14_UserCanCheckPriceOfTicketFromTimetable</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>48</td>
+<td>Railway.BookTicketTest@3af9c5b7</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable()'><b>TC15_UserCanBookTicketFromTimetable</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>157</td>
+<td>Railway.BookTicketTest@3af9c5b7</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC05_LoginWithNotActivatedAccount()'><b>TC05_LoginWithNotActivatedAccount</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>4</td>
+<td>Railway.LoginTest@49e5f737</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC01_LoginWithValidUsernameAndPassword()'><b>TC01_LoginWithValidUsernameAndPassword</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>5</td>
+<td>Railway.LoginTest@49e5f737</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC02_LoginWithBlankUsername()'><b>TC02_LoginWithBlankUsername</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>5</td>
+<td>Railway.LoginTest@49e5f737</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC13_UserCanBookManyTicketsAtATime()'><b>TC13_UserCanBookManyTicketsAtATime</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>42</td>
+<td>Railway.BookTicketTest@3af9c5b7</td></tr>
+<tr>
+<td title='Railway.RegisterTest.TC08_RegisterWithEmptyPasswordAndPID()'><b>TC08_RegisterWithEmptyPasswordAndPID</b><br>Test class: Railway.RegisterTest</td>
+<td></td>
+<td>4</td>
+<td>Railway.RegisterTest@c86b9e3</td></tr>
+<tr>
+<td title='Railway.ResetPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword()'><b>TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword</b><br>Test class: Railway.ResetPasswordTest</td>
+<td></td>
+<td>137</td>
+<td>Railway.ResetPasswordTest@10aa41f2</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC12_UserCanBookOneTicketAtATime()'><b>TC12_UserCanBookOneTicketAtATime</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>179</td>
+<td>Railway.BookTicketTest@3af9c5b7</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC03_LoginWithInvalidPassword()'><b>TC03_LoginWithInvalidPassword</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>4</td>
+<td>Railway.LoginTest@49e5f737</td></tr>
+<tr>
+<td title='Railway.RegisterTest.TC09_CreateAndActivateAccount()'><b>TC09_CreateAndActivateAccount</b><br>Test class: Railway.RegisterTest</td>
+<td></td>
+<td>93</td>
+<td>Railway.RegisterTest@c86b9e3</td></tr>
 </table><p>
 </body>
 </html>

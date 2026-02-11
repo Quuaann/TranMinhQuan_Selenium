@@ -33,7 +33,7 @@ public class RegisterTest extends TestBase {
 
     @Test
     public void TC08_RegisterWithEmptyPasswordAndPID() {
-        System.out.println("TC08C - User can't create account while password and PID fields are empty");
+        System.out.println("TC08 - User can't create account while password and PID fields are empty");
     	final Account invalidAccount = new Account(Constant.getNewUserMail(), "", "");
     	final String expectedGeneralMsg = "There're errors in the form. Please correct the errors and try again.";
     	final String expectedPwdMsg = "Invalid password length";
@@ -50,15 +50,15 @@ public class RegisterTest extends TestBase {
                 
         System.out.println("Verify general error message");
         String actualGeneralMsg = registerPage.getLblRegisterErrorMsg().getText();
-        Assert.assertEquals(actualGeneralMsg, expectedGeneralMsg, "General error message không đúng");
+        Assert.assertEquals(actualGeneralMsg, expectedGeneralMsg, "General error message is not correct");
         
         System.out.println("Verify password error message");
         String actualPwdMsg = registerPage.getLblPasswordErrorMsg().getText();       
-        Assert.assertEquals(actualPwdMsg, expectedPwdMsg, "Password error message không đúng");
+        Assert.assertEquals(actualPwdMsg, expectedPwdMsg, "Password error message is not correct");
         
         System.out.println("Verify PID error message");
         String actualPidMsg = registerPage.getLblPidErrorMsg().getText();
-        Assert.assertEquals(actualPidMsg, expectedPidMsg,"PID error message không đúng");
+        Assert.assertEquals(actualPidMsg, expectedPidMsg,"PID error message is not correct");
     }
     
     @Test
@@ -95,9 +95,11 @@ public class RegisterTest extends TestBase {
         mailFake.openMailFake();
         
         System.out.println("6. Activate new email");
+        System.out.println("7. Open email with subject containing 'Please confirm your account' and the email of the new account at step 3");
+        System.out.println("8. Click on the activate link");
         mailFake.activeNewMail(newAccount.getEmail());
         
-        System.out.println("Verify activation success message");
+        System.out.println("Verify user is redirect to Railways page and message 'Registration Confirmed! You can now log in to the site' is shown");
         String successActiveMessage = registerPage.getLblActiveSuccessfulMsg().getText();
         Assert.assertEquals(successActiveMessage, expectedActiveMessage, "Active email success to Register page");
     }

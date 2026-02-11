@@ -137,11 +137,8 @@ public class LoginPage extends GeneralPage {
     
     public boolean isShowTrueToken(String token) {
     	String currentToken = this.getTxtResetToken().getAttribute("value");
-    	System.out.println("CR TOKEN: "+currentToken);
-    	String expectedToken= token;
     	String currentUrl = Constant.WEBDRIVER.getCurrentUrl();
-        String expectedUrl = Constant.RAILWAY_URL;
-        if(currentUrl.contains(expectedUrl) && currentToken == expectedToken) {
+        if(currentUrl.contains("saferailway.somee.com/Account/PasswordReset") && currentToken.equals(token)) {
         	return true;
         }
         

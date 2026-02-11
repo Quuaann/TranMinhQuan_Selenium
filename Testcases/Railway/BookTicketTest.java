@@ -107,7 +107,7 @@ public class BookTicketTest extends TestBase {
         TimetablePage timetablePage = homePage.gotoPage(TabMenu.TIMETABLE,TimetablePage.class);
         
         System.out.println("4. Click on 'check price' link of the route from 'Đà Nẵng' to 'Sài Gòn'");
-        TicketPricePage ticketPricePage = timetablePage.clickCheckPriceForRoute();
+        TicketPricePage ticketPricePage = timetablePage.clickCheckPriceForRoute(Province.DA_NANG, Province.SAI_GON);
                 
         System.out.println("Verify 'Ticket Price' page is loaded");
         boolean isTicketPricePageDisplayed = ticketPricePage.getSelectedTicketPrice().isDisplayed();
@@ -143,7 +143,7 @@ public class BookTicketTest extends TestBase {
         TimetablePage timetablePage = homePage.gotoPage(TabMenu.TIMETABLE,TimetablePage.class);
         
         System.out.println("4. Click on book ticket of route 'Quảng Ngãi' to 'Huế'");
-        BookTicketPage bookTicketPage = timetablePage.clickBookTicketForRoute();
+        BookTicketPage bookTicketPage = timetablePage.clickBookTicketForRoute(Province.QUANG_NGAI, Province.HUE);
         
         System.out.println("5. Select Depart date = tomorrow");
         System.out.println("6. Select Ticket amount = 5");
