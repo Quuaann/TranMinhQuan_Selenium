@@ -26,15 +26,13 @@ public class LoginTest extends TestBase {
 
 	    System.out.println("4. Verify user is logged in");
 	    String actualMsg = homePage.getWelcomeMessage();
-	    
 	    Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
-	    System.out.println("TC01 PASSED");
 	}
 
 	@Test
-	public void TC02_LoginWithBlankPassword() {
-		System.out.println("TC02 - User cannot login with blank Password");
-		final Account blankPasswordAccount = new Account(Constant.USERNAME, "", Constant.PID);
+	public void TC02_LoginWithBlankUsername() {
+		System.out.println("TC02 - User cannot login with blank username");
+		final Account blankUsernameAccount = new Account("", Constant.PASSWORD, Constant.PID);
 	    final String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
 
 	    System.out.println("1. Navigate to QA Railway Website");
@@ -43,15 +41,13 @@ public class LoginTest extends TestBase {
 	    System.out.println("2. Click on 'Login' tab");
 	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
 
-	    System.out.println("3. User enters valid username but leaves password blank");
+	    System.out.println("3. User enters valid password but leaves username blank");
 	    System.out.println("4. Click on 'Login' button");
-	    loginPage = loginPage.login(blankPasswordAccount);
+	    loginPage = loginPage.login(blankUsernameAccount);
 	    
 	    System.out.println("Verify error message appears");
 	    String actualMsg = loginPage.getLblLoginErrorMsg().getText();
-
 	    Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected.");
-	    System.out.println("TC02 PASSED");
 	}
 
 	@Test
@@ -71,9 +67,7 @@ public class LoginTest extends TestBase {
 
 	    System.out.println("Verify error message is displayed");
 	    String actualMsg = loginPage.getLblLoginErrorMsg().getText();
-
 	    Assert.assertEquals(actualMsg, expectedMsg, "Error message is not displayed as expected.");
-	    System.out.println("TC03 PASSED");
 	}
 
 	@Test
@@ -93,25 +87,16 @@ public class LoginTest extends TestBase {
 	    System.out.println("4. Click on 'Login' button");
 	    loginPage = loginPage.login(invalidPasswordAccount);
 	    
-	    System.out.println("Verify second error message");
+	    System.out.println("Verify 'Invalid username or password. Please try again' is shown");
 	    String actualFirstMsg = loginPage.getLblLoginErrorMsg().getText();
-	    
-	    Assert.assertEquals(actualFirstMsg, expectedFirstMsg,
-	        "Error message is not displayed correctly");
+	    Assert.assertEquals(actualFirstMsg, expectedFirstMsg, "Error message is not displayed correctly");
 
 	    System.out.println("5. Repeat step 3 and 4 three more times.");
-	    for (int i = 0; i < 4; i++) {
-	        System.out.println("   Attempt " + (i + 2) + " with invalid password");
-	        loginPage.login(invalidPasswordAccount);
-	    }
+	    loginPage.repeatLogin(invalidPasswordAccount, 3);
 
-	    System.out.println("Verify error message appears");
+	    System.out.println("Verify 'You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.' appears");
 	    String actualSecondMsg = loginPage.getLblLoginErrorMsg().getText();
-	    
-	    Assert.assertEquals(actualSecondMsg, expectedSecondMsg,
-	        "Attempt limit warning message is not displayed");
-	    
-	    System.out.println("TC04 PASSED");
+	    Assert.assertEquals(actualSecondMsg, expectedSecondMsg, "Attempt limit warning message is not displayed");
 	}
 
 	@Test
@@ -132,10 +117,7 @@ public class LoginTest extends TestBase {
 
 	    System.out.println("Verify error message appears");
 	    String actualMsg = loginPage.getLblLoginErrorMsg().getText();
-	    
-	    Assert.assertTrue(actualMsg.contains(expectedMsg), 
-	        "Error message for not-activated account is not displayed correctly");
-	    System.out.println("TC05 PASSED");
+	    Assert.assertTrue(actualMsg.contains(expectedMsg), "Error message for not-activated account is not displayed correctly");
 	}
 
 	@Test
@@ -158,9 +140,10 @@ public class LoginTest extends TestBase {
 	    
 	    System.out.println("Verify user is redirected to Home page");
 	    boolean isHomePageDisplayed = homePage.getSelectedHome().isDisplayed();
-
-	    Assert.assertTrue(isHomePageDisplayed, 
-	        "Home page is not displayed.");
-	    System.out.println("TC06 PASSED");
+	    Assert.assertTrue(isHomePageDisplayed, "Home page is not displayed.");
+	    
+	    System.out.println("Verify 'Log out' tab is disappeared.");
+	    boolean isLogoutTabDisplayed = homePage.isLogoutTabPresent();
+	    Assert.assertFalse(isLogoutTabDisplayed, "Logout tab should not be displayed after logout");
 	}
 }

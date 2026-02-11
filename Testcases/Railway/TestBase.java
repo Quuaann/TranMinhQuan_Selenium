@@ -3,6 +3,7 @@ package Railway;
 import java.time.Duration;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -13,30 +14,42 @@ import Constant.Constant;
 
 public class TestBase {
 	HomePage homePage = new HomePage();
+	
 	@Parameters({"browser", "url"})
 	@BeforeSuite
-    public void beforeSuite(@Optional("chrome") String browser, 
-                           @Optional("http://railway.somee.com") String url) {
+    public void beforeSuite(@Optional("chrome") String browser, @Optional("http://railway.somee.com") String url) {
         System.out.println("=== TEST SUITE STARTED ===");
-        System.out.println("Browser: " + browser);
         System.out.println("URL: " + url);
-        //System.out.println("Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
     }
 	
+	@Parameters({"browser", "url"})
 	@BeforeMethod
-    public void beforeMethod() {
-        System.out.println("Pre-condition");
-        
-        Constant.WEBDRIVER = new ChromeDriver();
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public void beforeMethod(@Optional("chrome") String browser, @Optional("http://railway.somee.com") String url) {
+		
+		switch (browser.toLowerCase()) {
+        case "chrome":
+        	Constant.WEBDRIVER = new ChromeDriver();
+            System.out.println("ChromeDriver initialized");
+            break;
+            
+        case "firefox":
+        	Constant.WEBDRIVER = new FirefoxDriver();
+            System.out.println("FirefoxDriver initialized");
+            break;
+            
+        default:
+            System.out.println("Browser " + browser + " is not valid. Using Chrome as default.");
+            Constant.WEBDRIVER = new ChromeDriver();
+		}
+		
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         Constant.WEBDRIVER.manage().window().maximize();
-        
     }
 
     @AfterMethod
     public void afterMethod() {
-        System.out.println("Post-condition");
+        System.out.println("Post-condition\n");
         
-        Constant.WEBDRIVER.quit();
+        //Constant.WEBDRIVER.quit();
     }
 }

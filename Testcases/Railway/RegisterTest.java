@@ -28,10 +28,7 @@ public class RegisterTest extends TestBase {
         
         System.out.println("Verify error message");
         String actualMsg = registerPage.getLblRegisterErrorMsg().getText();
-        
         Assert.assertTrue(actualMsg.contains(expectedMsg), "Error message for existing email is not displayed.");
-        
-        System.out.println("TC07 PASSED: Cannot register with existing email");
     }
 
     @Test
@@ -62,14 +59,14 @@ public class RegisterTest extends TestBase {
         System.out.println("Verify PID error message");
         String actualPidMsg = registerPage.getLblPidErrorMsg().getText();
         Assert.assertEquals(actualPidMsg, expectedPidMsg,"PID error message không đúng");
-        
-        System.out.println("TC08 PASSED");
     }
     
     @Test
     public void TC09_CreateAndActivateAccount() {
     	System.out.println("TC09 - User create and activate account");
     	final Account newAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
+    	final String expectedMessage = "Thank you for registering your account";
+    	final String expectedActiveMessage = "Registration Confirmed! You can now log in to the site.";
         
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
@@ -91,7 +88,6 @@ public class RegisterTest extends TestBase {
                 
         System.out.println("Verify registration success message");
         String successMessage = registerPage.getLblRegisterSuccessfulMsg().getText();
-        String expectedMessage = "Thank you for registering your account";
         Assert.assertTrue(successMessage.contains(expectedMessage),"Registration success message not displayed.");
         
         System.out.println("5. Open email service for activation");
@@ -103,9 +99,6 @@ public class RegisterTest extends TestBase {
         
         System.out.println("Verify activation success message");
         String successActiveMessage = registerPage.getLblActiveSuccessfulMsg().getText();
-        String expectedActiveMessage = "Registration Confirmed! You can now log in to the site.";
         Assert.assertEquals(successActiveMessage, expectedActiveMessage, "Active email success to Register page");
-        
-        System.out.println("TC09 PASSED");
     }
 }

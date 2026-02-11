@@ -92,6 +92,7 @@ public class LoginPage extends GeneralPage {
     public <T> T login(Account account) {       
         this.getTxtUsername().sendKeys(account.getEmail());
         this.getTxtPassword().sendKeys(account.getPassword());
+        Utilities.scrollToElement(_btnLogin);
         this.getBtnLogin().click();
         
         if (isLogined()) {
@@ -99,6 +100,12 @@ public class LoginPage extends GeneralPage {
         } else {
             return (T) this;
         }
+    }
+    
+    public void repeatLogin(Account account, int time) {
+    	for (int i = 0; i < time; i++) {
+	        this.login(account);
+	    }
     }
     
     public ResetPasswordPage gotoForgotPasswordPage() {
@@ -129,13 +136,15 @@ public class LoginPage extends GeneralPage {
     }
     
     public boolean isShowTrueToken(String token) {
-    	String currentToken = this.getTxtResetToken().getText();
+    	String currentToken = this.getTxtResetToken().getAttribute("value");
+    	System.out.println("CR TOKEN: "+currentToken);
     	String expectedToken= token;
     	String currentUrl = Constant.WEBDRIVER.getCurrentUrl();
         String expectedUrl = Constant.RAILWAY_URL;
-        if(currentUrl == expectedUrl && currentToken == expectedToken) {
+        if(currentUrl.contains(expectedUrl) && currentToken == expectedToken) {
         	return true;
         }
+        
         return false;
     }
 }

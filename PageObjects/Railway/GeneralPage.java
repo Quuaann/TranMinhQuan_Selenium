@@ -12,6 +12,12 @@ public class GeneralPage {
     // Locators
     private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
     
+    protected String getTabXpath(TabMenu tabMenu) {
+        String tabName = tabMenu.getTabName();
+        return String.format(dynamicTabXpathTemplate, tabName);
+        
+    }
+    
     private final String dynamicTabXpathTemplate = "//div[@id='menu']//a[normalize-space()='%s']";
     
     // Elements

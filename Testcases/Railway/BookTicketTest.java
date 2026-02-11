@@ -43,23 +43,19 @@ public class BookTicketTest extends TestBase {
                         
         System.out.println("Verify message 'Ticket booked successfully!' displays");
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
-        
-        Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
-            "Success message not displayed. Actual: " + successMessage);
+        Assert.assertTrue(successMessage.contains(expectedSuccessMsg), "Success message not displayed. Actual: " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
         BookTicket actualbookTicket = new BookTicket();
         actualbookTicket = bookTicketPage.getActualBookTicket(actualbookTicket);
         Assert.assertEquals(actualbookTicket.getText(), expectedBookTicket.getText(),"Book Ticket not match");
-        
-        System.out.println("TC12 PASSED - User can book 1 ticket successfully");
     }
 	    
     @Test
     public void TC13_UserCanBookManyTicketsAtATime() {
     	System.out.println("TC13 - User can book many tickets at a time");
         final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
-        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(25), Province.NHA_TRANG, Province.SAI_GON, SeatType.SOFT_SEAT_WITH_AC, "5");
+        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 25), Province.NHA_TRANG, Province.SAI_GON, SeatType.SOFT_SEAT_WITH_AC, "5");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
@@ -83,18 +79,12 @@ public class BookTicketTest extends TestBase {
                 
         System.out.println("Verify message 'Ticket booked successfully!' displays");
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
-        
-        Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
-            "Success message not displayed. Actual: " + successMessage);
+        Assert.assertTrue(successMessage.contains(expectedSuccessMsg), "Success message not displayed. Actual: " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
-        
         BookTicket actualBookTicket = new BookTicket();
         actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
-        
         Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
-        
-        System.out.println("TC13 PASSED - User can book many tickets at a time");
     }
     
     @Test
@@ -131,15 +121,13 @@ public class BookTicketTest extends TestBase {
         TicketPrice actualTicketPrice = new TicketPrice();
         actualTicketPrice = ticketPricePage.getTxtTicketTableCell(actualTicketPrice);
         Assert.assertEquals(actualTicketPrice.getText(), expectedTicketPrice.getText(), "Ticket prices do not match");
-        
-        System.out.println("TC14 PASSED - User can check price of ticket from Timetable");
     }
     
     @Test
     public void TC15_UserCanBookTicketFromTimetable() {
     	System.out.println("TC15 - User can book ticket from Timetable");
         final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
-        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(4), Province.QUANG_NGAI, Province.HUE, null, "5");
+        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 1), Province.QUANG_NGAI, Province.HUE, null, "5");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
@@ -164,19 +152,13 @@ public class BookTicketTest extends TestBase {
         
         System.out.println("Verify message 'Ticket booked successfully!' displays");
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
-        
-        Assert.assertTrue(successMessage.contains(expectedSuccessMsg),
-            "Success message not displayed. " + successMessage);
+        Assert.assertTrue(successMessage.contains(expectedSuccessMsg), "Success message not displayed. " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
-        
         BookTicket actualBookTicket = new BookTicket();
         actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
-        
         expectedBookTicket.setSeatType(SeatType.fromDisplayName(Constant.DEFAULT_SEATTYPE));
         Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
-        
-        System.out.println("TC15 PASSED - User can book ticket from Timetable");
     }
     
     @Test
@@ -184,12 +166,7 @@ public class BookTicketTest extends TestBase {
     	System.out.println("TC16 - User can cancel a ticket");
         final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
         final BookTicket bt = new BookTicket(
-            Utilities.convertDateToStringFromToday(2 + Constant.DEPART_DAY),
-            Province.NHA_TRANG, 
-            Province.HUE, 
-            SeatType.SOFT_SEAT_WITH_AC, 
-            "1"
-        );
+            Utilities.convertDateToStringFromToday(2 + Constant.DEPART_DAY), Province.NHA_TRANG, Province.HUE, SeatType.SOFT_SEAT_WITH_AC, "1");
 
         System.out.println("PRE-CONDITION: Login with activated account");
         homePage.createActiveAccount(homePage, testAccount);
@@ -215,9 +192,6 @@ public class BookTicketTest extends TestBase {
         
         System.out.println("Verify ticket is cancelled and removed from the list");
         boolean ticketStillExists = myTicketPage.isTicketStillPresent(bt);
-        
         Assert.assertFalse(ticketStillExists, "Cancelled ticket should no longer be in the list");
-        
-        System.out.println("TC16 PASSED - User can cancel a ticket successfully");
     }
 }

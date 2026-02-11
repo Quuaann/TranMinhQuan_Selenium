@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import Constant.Constant;
+import Constant.TabMenu;
 
 public class HomePage extends GeneralPage {
 	
@@ -34,5 +35,8 @@ public class HomePage extends GeneralPage {
 		return new RegisterPage();
 	}
 	
-	
+	public boolean isLogoutTabPresent() {
+		String xpathLogout = this.getTabXpath(TabMenu.LOGOUT);
+    	return !Constant.WEBDRIVER.findElements(By.xpath(xpathLogout)).isEmpty();
+    }
 }
