@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import Constant.Constant;
 import Constant.TabMenu;
-import DataObject.Account;
-import Guerrillamail.MailFake;
 
 public class GeneralPage {
 
@@ -43,15 +41,5 @@ public class GeneralPage {
         } catch (Exception e) {
             throw new RuntimeException("Failed to navigate to page: " + tabMenu.getTabName(), e);
         }
-    }
-    
-    // From TC07
-    public void createActiveAccount(HomePage homePage, Account newAccount) {
-        homePage.open();
-        RegisterPage registerPage = homePage.clickRegisterLink();
-        registerPage.enterRegistrationInfo(newAccount);
-        MailFake mailFake = new MailFake();
-        mailFake.openMailFake();
-        mailFake.activeNewMail(newAccount.getEmail());
     }
 }

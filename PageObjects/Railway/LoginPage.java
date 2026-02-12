@@ -10,73 +10,73 @@ import DataObject.Account;
 public class LoginPage extends GeneralPage {
 	
     // Locators
-    private final By _txtUsername = By.xpath("//input[@id='username']");
-    private final By _txtPassword = By.xpath("//input[@id='password']");
-    private final By _btnLogin = By.xpath("//input[@value='login']");
-    private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
-    private final By _linkForgotPassword = By.xpath("//a[@href='/Account/ForgotPassword.cshtml']");
+    private final By txtUsername = By.xpath("//input[@id='username']");
+    private final By txtPassword = By.xpath("//input[@id='password']");
+    private final By btnLogin = By.xpath("//input[@value='login']");
+    private final By lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
+    private final By linkForgotPassword = By.xpath("//a[@href='/Account/ForgotPassword.cshtml']");
     
-    private final By _txtNewPassword = By.xpath("//input[@id='newPassword']");
-    private final By _txtConfirmPassword = By.xpath("//input[@id='confirmPassword']");
-    private final By _txtResetToken = By.xpath("//input[@id='resetToken']");
-    private final By _btnResetPassword = By.xpath("//p[@class='form-actions']//input");
-    private final By _lblResetSucces = By.xpath("//p[@class='message success' and .//a]");
-    private final By _lblErrorMsg = By.xpath("//p[@class='message error']");
-    private final By _linkResetSucces = By.xpath("//p//a");
-    private final By _lblConfirmPasswordErrorMsg = By.xpath("//label[@class='validation-error' and @for='confirmPassword']");
+    private final By txtNewPassword = By.xpath("//input[@id='newPassword']");
+    private final By txtConfirmPassword = By.xpath("//input[@id='confirmPassword']");
+    private final By txtResetToken = By.xpath("//input[@id='resetToken']");
+    private final By btnResetPassword = By.xpath("//p[@class='form-actions']//input");
+    private final By lblResetSucces = By.xpath("//p[@class='message success' and .//a]");
+    private final By lblErrorMsg = By.xpath("//p[@class='message error']");
+    private final By linkResetSucces = By.xpath("//p//a");
+    private final By lblConfirmPasswordErrorMsg = By.xpath("//label[@class='validation-error' and @for='confirmPassword']");
 
 
     // Elements
     public WebElement getTxtUsername() {
-        return Constant.WEBDRIVER.findElement(_txtUsername);
+        return Constant.WEBDRIVER.findElement(txtUsername);
     }
 
     public WebElement getTxtPassword() {
-        return Constant.WEBDRIVER.findElement(_txtPassword);
+        return Constant.WEBDRIVER.findElement(txtPassword);
     }
 
     public WebElement getBtnLogin() {
-        return Constant.WEBDRIVER.findElement(_btnLogin);
+        return Constant.WEBDRIVER.findElement(btnLogin);
     }
     
     public WebElement getLblLoginErrorMsg() {
-        return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
+        return Constant.WEBDRIVER.findElement(lblLoginErrorMsg);
     }
     
     public WebElement getLinkForgotPassword() {
-        return Constant.WEBDRIVER.findElement(_linkForgotPassword);
+        return Constant.WEBDRIVER.findElement(linkForgotPassword);
     }
     
     public WebElement getTxtNewPassword() {
-        return Constant.WEBDRIVER.findElement(_txtNewPassword);
+        return Constant.WEBDRIVER.findElement(txtNewPassword);
     }
     
     public WebElement getTxtConfirmPassword() {
-        return Constant.WEBDRIVER.findElement(_txtConfirmPassword);
+        return Constant.WEBDRIVER.findElement(txtConfirmPassword);
     }
     
     public WebElement getTxtResetToken() {
-        return Constant.WEBDRIVER.findElement(_txtResetToken);
+        return Constant.WEBDRIVER.findElement(txtResetToken);
     }
     
     public WebElement getBtnResetPassword() {
-        return Constant.WEBDRIVER.findElement(_btnResetPassword);
+        return Constant.WEBDRIVER.findElement(btnResetPassword);
     }
     
     public WebElement getLblResetSucces() {
-        return Constant.WEBDRIVER.findElement(_lblResetSucces);
+        return Constant.WEBDRIVER.findElement(lblResetSucces);
     }
     
     public WebElement getLblResetError() {
-        return Constant.WEBDRIVER.findElement(_lblErrorMsg);
+        return Constant.WEBDRIVER.findElement(lblErrorMsg);
     }
     
     public WebElement getLinkResetSucces() {
-        return Constant.WEBDRIVER.findElement(_linkResetSucces);
+        return Constant.WEBDRIVER.findElement(linkResetSucces);
     }
     
     public WebElement getLblConfirmPasswordErrorMsg() {
-        return Constant.WEBDRIVER.findElement(_lblConfirmPasswordErrorMsg);
+        return Constant.WEBDRIVER.findElement(lblConfirmPasswordErrorMsg);
     }
     
     // Methods
@@ -92,7 +92,7 @@ public class LoginPage extends GeneralPage {
     public <T> T login(Account account) {       
         this.getTxtUsername().sendKeys(account.getEmail());
         this.getTxtPassword().sendKeys(account.getPassword());
-        Utilities.scrollToElement(_btnLogin);
+        Utilities.scrollToElement(btnLogin);
         this.getBtnLogin().click();
         
         if (isLogined()) {
@@ -109,7 +109,7 @@ public class LoginPage extends GeneralPage {
     }
     
     public ResetPasswordPage gotoForgotPasswordPage() {
-    	Utilities.scrollToElement(_linkForgotPassword);
+    	Utilities.scrollToElement(linkForgotPassword);
     	this.getLinkForgotPassword().click();
     	return new ResetPasswordPage();
     }

@@ -61,7 +61,7 @@ public class BookTicket {
 
     public String getText() {
         return String.format("DepartDate: %s, DepartFrom: %s, ArriveAt: %s, SeatType: %s, TicketAmount: %s",
-            getValueOrEmpty(departDate),
+            getValueOrEmpty(departDate.toString()),
             getValueOrEmpty(departFrom.toString()),
             getValueOrEmpty(arriveAt.toString()),
             getValueOrEmpty(seatType.toString()),

@@ -12,6 +12,7 @@ public class Account {
     
     public Account(String email, String password, String pid) {
         this.email = email;
+        this.username = extractUsernameFromEmail(email);
         this.password = password;
         this.confirmPassword = password;
         this.pid = pid;
@@ -66,6 +67,19 @@ public class Account {
     
     public void setPid(String pid) {
         this.pid = pid;
+    }
+    
+    private String extractUsernameFromEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            return "";
+        }
+        
+        int atIndex = email.indexOf('@');
+        if (atIndex > 0) {
+            return email.substring(0, atIndex);
+        }
+        
+        return email;
     }
     
 }

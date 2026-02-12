@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Login Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>11/5/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 11 14:33:01 ICT 2026</td>
+<td>Started on:</td><td>Wed Feb 11 16:24:51 ICT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>982 seconds (982668 ms)</td>
+<tr><td>Total time:</td><td>527 seconds (527040 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,12 +76,274 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='Railway.BookTicketTest.TC14_UserCanCheckPriceOfTicketFromTimetable()'><b>TC14_UserCanCheckPriceOfTicketFromTimetable</b><br>Test class: Railway.BookTicketTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;]&quot;}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50091}, goog:processID: 48056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50091/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81322afaac563ee7f14411a53ba46110
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Common.Utilities.waitForVisible(Utilities.java:53)
+	at Common.Utilities.waitForVisible(Utilities.java:48)
+	at Guerrillamail.MailFake.activeNewMail(MailFake.java:120)
+	at Railway.GeneralPage.createActiveAccount(GeneralPage.java:55)
+	at Railway.BookTicketTest.TC14_UserCanCheckPriceOfTicketFromTimetable(BookTicketTest.java:98)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1073835233", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1073835233'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;]&quot;}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50091}, goog:processID: 48056, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50091/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81322afaac563ee7f14411a53ba46110
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Common.Utilities.waitForVisible(Utilities.java:53)
+	at Common.Utilities.waitForVisible(Utilities.java:48)
+	at Guerrillamail.MailFake.activeNewMail(MailFake.java:120)
+	at Railway.GeneralPage.createActiveAccount(GeneralPage.java:55)
+	at Railway.BookTicketTest.TC14_UserCanCheckPriceOfTicketFromTimetable(BookTicketTest.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>51</td>
+<td>Railway.BookTicketTest@37271612</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable()'><b>TC15_UserCanBookTicketFromTimetable</b><br>Test class: Railway.BookTicketTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class, &apos;editable&apos;)]//input&quot;}
+  (Session info: chrome=144.0.7559.133)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4f07dd2be81ff71d96ca77f770a2751e, findElement {using=xpath, value=//span[contains(@class, &apos;editable&apos;)]//input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50529}, goog:processID: 46188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50529/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f07dd2be81ff71d96ca77f770a2751e
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
+	at Guerrillamail.MailFake.getTbNewEmail(MailFake.java:27)
+	at Guerrillamail.MailFake.activeNewMail(MailFake.java:116)
+	at Railway.GeneralPage.createActiveAccount(GeneralPage.java:55)
+	at Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable(BookTicketTest.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace535708280", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace535708280'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class, &apos;editable&apos;)]//input&quot;}
+  (Session info: chrome=144.0.7559.133)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4f07dd2be81ff71d96ca77f770a2751e, findElement {using=xpath, value=//span[contains(@class, &apos;editable&apos;)]//input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50529}, goog:processID: 46188, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50529/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4f07dd2be81ff71d96ca77f770a2751e
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
+	at Guerrillamail.MailFake.getTbNewEmail(MailFake.java:27)
+	at Guerrillamail.MailFake.activeNewMail(MailFake.java:116)
+	at Railway.GeneralPage.createActiveAccount(GeneralPage.java:55)
+	at Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable(BookTicketTest.java:134)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>38</td>
+<td>Railway.BookTicketTest@37271612</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC16_UserCanCancelATicket()'><b>TC16_UserCanCancelATicket</b><br>Test class: Railway.BookTicketTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;]&quot;}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50908}, goog:processID: 47356, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50908/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c36145c1b4f48c72cf49107a7f87c49f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Common.Utilities.waitForVisible(Utilities.java:53)
+	at Common.Utilities.waitForVisible(Utilities.java:48)
+	at Guerrillamail.MailFake.activeNewMail(MailFake.java:120)
+	at Railway.GeneralPage.createActiveAccount(GeneralPage.java:55)
+	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:172)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1045101840", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1045101840'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;]&quot;}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50908}, goog:processID: 47356, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50908/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c36145c1b4f48c72cf49107a7f87c49f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Common.Utilities.waitForVisible(Utilities.java:53)
+	at Common.Utilities.waitForVisible(Utilities.java:48)
+	at Guerrillamail.MailFake.activeNewMail(MailFake.java:120)
+	at Railway.GeneralPage.createActiveAccount(GeneralPage.java:55)
+	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:172)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>46</td>
+<td>Railway.BookTicketTest@37271612</td></tr>
+<tr>
+<td title='Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword()'><b>TC10_ResetPasswordShowsErrorIfTheSamePassword</b><br>Test class: Railway.ResetPasswordTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//span[starts-with(., &apos;Use this&apos;)], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//span[starts-with(., &apos;Use this&apos;)]&quot;}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65244}, goog:processID: 44868, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65244/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 69848f88ecebed10064c58d1dfeb2081
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Common.Utilities.waitForVisible(Utilities.java:53)
+	at Common.Utilities.waitForVisible(Utilities.java:48)
+	at Guerrillamail.MailFake.forgotMail(MailFake.java:97)
+	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2096842550", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2096842550'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//span[starts-with(., &apos;Use this&apos;)], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//span[starts-with(., &apos;Use this&apos;)]&quot;}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65244}, goog:processID: 44868, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65244/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 69848f88ecebed10064c58d1dfeb2081
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at Common.Utilities.waitForVisible(Utilities.java:53)
+	at Common.Utilities.waitForVisible(Utilities.java:48)
+	at Guerrillamail.MailFake.forgotMail(MailFake.java:97)
+	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>69</td>
+<td>Railway.ResetPasswordTest@3af9c5b7</td></tr>
+<tr>
 <td title='Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts()'><b>TC04_LoginWithMultipleWrongPasswordAttempts</b><br>Test class: Railway.LoginTest</td>
 <td><div><pre>java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
 	at Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts(LoginTest.java:99)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2128195220", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2128195220'><pre>java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace244297136", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace244297136'><pre>java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -115,90 +377,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>8</td>
-<td>Railway.LoginTest@49e5f737</td></tr>
-<tr>
-<td title='Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword()'><b>TC10_ResetPasswordShowsErrorIfTheSamePassword</b><br>Test class: Railway.ResetPasswordTest</td>
-<td><div><pre>java.lang.AssertionError: Error message is not displayed as expected expected [The new password cannot be the same as the current password] but found [Password changed! Click here to login.]
-	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:50)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1895203464", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1895203464'><pre>java.lang.AssertionError: Error message is not displayed as expected expected [The new password cannot be the same as the current password] but found [Password changed! Click here to login.]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:50)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>71</td>
-<td>Railway.ResetPasswordTest@10aa41f2</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC16_UserCanCancelATicket()'><b>TC16_UserCanCancelATicket</b><br>Test class: Railway.BookTicketTest</td>
-<td><div><pre>java.lang.AssertionError: Cancelled ticket should no longer be in the list expected [false] but found [true]
-	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:195)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1554303114", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1554303114'><pre>java.lang.AssertionError: Cancelled ticket should no longer be in the list expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertFalse(Assert.java:79)
-	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:195)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>151</td>
-<td>Railway.BookTicketTest@3af9c5b7</td></tr>
+<td>13</td>
+<td>Railway.LoginTest@5c671d7f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -212,67 +392,57 @@ function toggleAllBoxes() {
 <td title='Railway.RegisterTest.TC07_CannotCreateAccountWithExistingEmail()'><b>TC07_CannotCreateAccountWithExistingEmail</b><br>Test class: Railway.RegisterTest</td>
 <td></td>
 <td>6</td>
-<td>Railway.RegisterTest@c86b9e3</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC06_RedirectToHomeAfterLogout()'><b>TC06_RedirectToHomeAfterLogout</b><br>Test class: Railway.LoginTest</td>
-<td></td>
-<td>9</td>
-<td>Railway.LoginTest@49e5f737</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC14_UserCanCheckPriceOfTicketFromTimetable()'><b>TC14_UserCanCheckPriceOfTicketFromTimetable</b><br>Test class: Railway.BookTicketTest</td>
-<td></td>
-<td>48</td>
-<td>Railway.BookTicketTest@3af9c5b7</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable()'><b>TC15_UserCanBookTicketFromTimetable</b><br>Test class: Railway.BookTicketTest</td>
-<td></td>
-<td>157</td>
-<td>Railway.BookTicketTest@3af9c5b7</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC05_LoginWithNotActivatedAccount()'><b>TC05_LoginWithNotActivatedAccount</b><br>Test class: Railway.LoginTest</td>
-<td></td>
-<td>4</td>
-<td>Railway.LoginTest@49e5f737</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC01_LoginWithValidUsernameAndPassword()'><b>TC01_LoginWithValidUsernameAndPassword</b><br>Test class: Railway.LoginTest</td>
-<td></td>
-<td>5</td>
-<td>Railway.LoginTest@49e5f737</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC02_LoginWithBlankUsername()'><b>TC02_LoginWithBlankUsername</b><br>Test class: Railway.LoginTest</td>
-<td></td>
-<td>5</td>
-<td>Railway.LoginTest@49e5f737</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC13_UserCanBookManyTicketsAtATime()'><b>TC13_UserCanBookManyTicketsAtATime</b><br>Test class: Railway.BookTicketTest</td>
-<td></td>
-<td>42</td>
-<td>Railway.BookTicketTest@3af9c5b7</td></tr>
-<tr>
-<td title='Railway.RegisterTest.TC08_RegisterWithEmptyPasswordAndPID()'><b>TC08_RegisterWithEmptyPasswordAndPID</b><br>Test class: Railway.RegisterTest</td>
-<td></td>
-<td>4</td>
-<td>Railway.RegisterTest@c86b9e3</td></tr>
-<tr>
-<td title='Railway.ResetPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword()'><b>TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword</b><br>Test class: Railway.ResetPasswordTest</td>
-<td></td>
-<td>137</td>
-<td>Railway.ResetPasswordTest@10aa41f2</td></tr>
-<tr>
-<td title='Railway.BookTicketTest.TC12_UserCanBookOneTicketAtATime()'><b>TC12_UserCanBookOneTicketAtATime</b><br>Test class: Railway.BookTicketTest</td>
-<td></td>
-<td>179</td>
-<td>Railway.BookTicketTest@3af9c5b7</td></tr>
-<tr>
-<td title='Railway.LoginTest.TC03_LoginWithInvalidPassword()'><b>TC03_LoginWithInvalidPassword</b><br>Test class: Railway.LoginTest</td>
-<td></td>
-<td>4</td>
-<td>Railway.LoginTest@49e5f737</td></tr>
+<td>Railway.RegisterTest@10aa41f2</td></tr>
 <tr>
 <td title='Railway.RegisterTest.TC09_CreateAndActivateAccount()'><b>TC09_CreateAndActivateAccount</b><br>Test class: Railway.RegisterTest</td>
 <td></td>
-<td>93</td>
-<td>Railway.RegisterTest@c86b9e3</td></tr>
+<td>45</td>
+<td>Railway.RegisterTest@10aa41f2</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC01_LoginWithValidUsernameAndPassword()'><b>TC01_LoginWithValidUsernameAndPassword</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>6</td>
+<td>Railway.LoginTest@5c671d7f</td></tr>
+<tr>
+<td title='Railway.ResetPasswordTest.TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword()'><b>TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword</b><br>Test class: Railway.ResetPasswordTest</td>
+<td></td>
+<td>56</td>
+<td>Railway.ResetPasswordTest@3af9c5b7</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC06_RedirectToHomeAfterLogout()'><b>TC06_RedirectToHomeAfterLogout</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>16</td>
+<td>Railway.LoginTest@5c671d7f</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC02_LoginWithBlankUsername()'><b>TC02_LoginWithBlankUsername</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>4</td>
+<td>Railway.LoginTest@5c671d7f</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC03_LoginWithInvalidPassword()'><b>TC03_LoginWithInvalidPassword</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>8</td>
+<td>Railway.LoginTest@5c671d7f</td></tr>
+<tr>
+<td title='Railway.LoginTest.TC05_LoginWithNotActivatedAccount()'><b>TC05_LoginWithNotActivatedAccount</b><br>Test class: Railway.LoginTest</td>
+<td></td>
+<td>9</td>
+<td>Railway.LoginTest@5c671d7f</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC13_UserCanBookManyTicketsAtATime()'><b>TC13_UserCanBookManyTicketsAtATime</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>50</td>
+<td>Railway.BookTicketTest@37271612</td></tr>
+<tr>
+<td title='Railway.BookTicketTest.TC12_UserCanBookOneTicketAtATime()'><b>TC12_UserCanBookOneTicketAtATime</b><br>Test class: Railway.BookTicketTest</td>
+<td></td>
+<td>36</td>
+<td>Railway.BookTicketTest@37271612</td></tr>
+<tr>
+<td title='Railway.RegisterTest.TC08_RegisterWithEmptyPasswordAndPID()'><b>TC08_RegisterWithEmptyPasswordAndPID</b><br>Test class: Railway.RegisterTest</td>
+<td></td>
+<td>5</td>
+<td>Railway.RegisterTest@10aa41f2</td></tr>
 </table><p>
 </body>
 </html>

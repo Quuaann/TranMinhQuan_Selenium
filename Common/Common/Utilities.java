@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -14,6 +15,10 @@ import java.util.Date;
 import Constant.Constant;
 
 public class Utilities {
+	public String getFirstSelectedOptionText(By dropdownLocator) {
+	    Select select = new Select(Constant.WEBDRIVER.findElement(dropdownLocator));
+	    return select.getFirstSelectedOption().getText();
+	}
 	
 	public static String convertDateToStringFromToday(int day) {
 		Calendar calendar = Calendar.getInstance();

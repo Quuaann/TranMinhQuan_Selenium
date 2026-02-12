@@ -15,16 +15,15 @@ import Constant.Constant;
 public class TestBase {
 	HomePage homePage = new HomePage();
 	
-	@Parameters({"browser", "url"})
+	@Parameters({"browser"})
 	@BeforeSuite
-    public void beforeSuite(@Optional("chrome") String browser, @Optional("http://railway.somee.com") String url) {
+    public void beforeSuite(@Optional("chrome") String browser) {
         System.out.println("=== TEST SUITE STARTED ===");
-        System.out.println("URL: " + url);
     }
 	
-	@Parameters({"browser", "url"})
+	@Parameters({"browser"})
 	@BeforeMethod
-    public void beforeMethod(@Optional("chrome") String browser, @Optional("http://railway.somee.com") String url) {
+    public void beforeMethod(@Optional("chrome") String browser) {
 		
 		switch (browser.toLowerCase()) {
         case "chrome":

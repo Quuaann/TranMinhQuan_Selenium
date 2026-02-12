@@ -1,294 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="13" failed="3" skipped="0">
+<testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-11T14:33:01 ICT" name="Railway Booking Test Suite" finished-at="2026-02-11T14:49:23 ICT" duration-ms="982668">
+  <suite started-at="2026-02-12T15:56:23 ICT" name="Default suite" finished-at="2026-02-12T15:57:37 ICT" duration-ms="74292">
     <groups>
     </groups>
-    <test started-at="2026-02-11T14:33:01 ICT" name="Login Tests" finished-at="2026-02-11T14:49:23 ICT" duration-ms="982668">
-      <class name="Railway.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@10aa41f2]" started-at="2026-02-11T14:35:48 ICT" name="beforeMethod" finished-at="2026-02-11T14:35:50 ICT" duration-ms="1891" status="PASS">
+    <test started-at="2026-02-12T15:56:23 ICT" name="Default test" finished-at="2026-02-12T15:57:37 ICT" duration-ms="74292">
+      <class name="Railway.BookTicketTest">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:Railway.BookTicketTest@4c39bec8]" started-at="2026-02-12T15:56:23 ICT" name="beforeSuite" finished-at="2026-02-12T15:56:23 ICT" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC10_ResetPasswordShowsErrorIfTheSamePassword()[pri:0, instance:Railway.ResetPasswordTest@10aa41f2]" started-at="2026-02-11T14:35:50 ICT" name="TC10_ResetPasswordShowsErrorIfTheSamePassword" finished-at="2026-02-11T14:37:02 ICT" duration-ms="71920" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Error message is not displayed as expected expected [The new password cannot be the same as the current password] but found [Password changed! Click here to login.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Error message is not displayed as expected expected [The new password cannot be the same as the current password] but found [Password changed! Click here to login.]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:50)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC10_ResetPasswordShowsErrorIfTheSamePassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@10aa41f2]" started-at="2026-02-11T14:37:02 ICT" name="afterMethod" finished-at="2026-02-11T14:37:06 ICT" duration-ms="3874" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@10aa41f2]" started-at="2026-02-11T14:37:06 ICT" name="beforeMethod" finished-at="2026-02-11T14:37:09 ICT" duration-ms="2850" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword()[pri:0, instance:Railway.ResetPasswordTest@10aa41f2]" started-at="2026-02-11T14:37:09 ICT" name="TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword" finished-at="2026-02-11T14:39:27 ICT" duration-ms="137937" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@10aa41f2]" started-at="2026-02-11T14:39:27 ICT" name="afterMethod" finished-at="2026-02-11T14:39:28 ICT" duration-ms="1204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.ResetPasswordTest -->
-      <class name="Railway.RegisterTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:33:56 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:57 ICT" duration-ms="1814" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC07_CannotCreateAccountWithExistingEmail()[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:33:57 ICT" name="TC07_CannotCreateAccountWithExistingEmail" finished-at="2026-02-11T14:34:04 ICT" duration-ms="6216" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC07_CannotCreateAccountWithExistingEmail -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:34:04 ICT" name="afterMethod" finished-at="2026-02-11T14:34:04 ICT" duration-ms="466" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:34:04 ICT" name="beforeMethod" finished-at="2026-02-11T14:34:06 ICT" duration-ms="1810" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC08_RegisterWithEmptyPasswordAndPID()[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:34:06 ICT" name="TC08_RegisterWithEmptyPasswordAndPID" finished-at="2026-02-11T14:34:11 ICT" duration-ms="4958" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC08_RegisterWithEmptyPasswordAndPID -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:34:11 ICT" name="afterMethod" finished-at="2026-02-11T14:34:11 ICT" duration-ms="468" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:34:11 ICT" name="beforeMethod" finished-at="2026-02-11T14:34:13 ICT" duration-ms="1931" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC09_CreateAndActivateAccount()[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:34:13 ICT" name="TC09_CreateAndActivateAccount" finished-at="2026-02-11T14:35:47 ICT" duration-ms="93978" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC09_CreateAndActivateAccount -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.RegisterTest@c86b9e3]" started-at="2026-02-11T14:35:47 ICT" name="afterMethod" finished-at="2026-02-11T14:35:48 ICT" duration-ms="992" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.RegisterTest -->
-      <class name="Railway.LoginTest">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:00 ICT" name="beforeSuite" finished-at="2026-02-11T14:33:00 ICT" duration-ms="53" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:01 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:05 ICT" duration-ms="3923" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@4c39bec8]" started-at="2026-02-12T15:56:23 ICT" name="beforeMethod" finished-at="2026-02-12T15:56:26 ICT" duration-ms="3027" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[chrome]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC01_LoginWithValidUsernameAndPassword()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:05 ICT" name="TC01_LoginWithValidUsernameAndPassword" finished-at="2026-02-11T14:33:10 ICT" duration-ms="5293" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC01_LoginWithValidUsernameAndPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:10 ICT" name="afterMethod" finished-at="2026-02-11T14:33:11 ICT" duration-ms="705" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:11 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:12 ICT" duration-ms="1911" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC02_LoginWithBlankUsername()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:12 ICT" name="TC02_LoginWithBlankUsername" finished-at="2026-02-11T14:33:18 ICT" duration-ms="5361" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC02_LoginWithBlankUsername -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:18 ICT" name="afterMethod" finished-at="2026-02-11T14:33:18 ICT" duration-ms="474" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:18 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:20 ICT" duration-ms="1803" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC03_LoginWithInvalidPassword()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:20 ICT" name="TC03_LoginWithInvalidPassword" finished-at="2026-02-11T14:33:25 ICT" duration-ms="4473" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC03_LoginWithInvalidPassword -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:25 ICT" name="afterMethod" finished-at="2026-02-11T14:33:25 ICT" duration-ms="528" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:25 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:27 ICT" duration-ms="1952" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC04_LoginWithMultipleWrongPasswordAttempts()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:27 ICT" name="TC04_LoginWithMultipleWrongPasswordAttempts" finished-at="2026-02-11T14:33:36 ICT" duration-ms="8734" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="TC15_UserCanBookTicketFromTimetable()[pri:0, instance:Railway.BookTicketTest@4c39bec8]" started-at="2026-02-12T15:56:26 ICT" name="TC15_UserCanBookTicketFromTimetable" finished-at="2026-02-12T15:57:36 ICT" duration-ms="70513" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com']"}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63159}, goog:processID: 43936, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63159/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e64f0c2cf49fd9dbe980a15cd4c43b30]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts(LoginTest.java:99)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com'], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com']"}.
+(tried for 30 seconds with 500 milliseconds interval)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63159}, goog:processID: 43936, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63159/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e64f0c2cf49fd9dbe980a15cd4c43b30
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at Common.Utilities.waitForVisible(Utilities.java:58)
+at Common.Utilities.waitForVisible(Utilities.java:53)
+at Guerrillamail.MailFake.activeNewMail(MailFake.java:103)
+at Railway.CreateActiveAccountFlow.createActiveAccount(CreateActiveAccountFlow.java:14)
+at Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable(BookTicketTest.java:141)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -317,224 +83,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC04_LoginWithMultipleWrongPasswordAttempts -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:36 ICT" name="afterMethod" finished-at="2026-02-11T14:33:36 ICT" duration-ms="487" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:36 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:38 ICT" duration-ms="1959" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC05_LoginWithNotActivatedAccount()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:38 ICT" name="TC05_LoginWithNotActivatedAccount" finished-at="2026-02-11T14:33:43 ICT" duration-ms="4522" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC05_LoginWithNotActivatedAccount -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:43 ICT" name="afterMethod" finished-at="2026-02-11T14:33:43 ICT" duration-ms="482" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:43 ICT" name="beforeMethod" finished-at="2026-02-11T14:33:45 ICT" duration-ms="1971" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC06_RedirectToHomeAfterLogout()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:45 ICT" name="TC06_RedirectToHomeAfterLogout" finished-at="2026-02-11T14:33:55 ICT" duration-ms="9843" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC06_RedirectToHomeAfterLogout -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@49e5f737]" started-at="2026-02-11T14:33:55 ICT" name="afterMethod" finished-at="2026-02-11T14:33:56 ICT" duration-ms="522" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- Railway.LoginTest -->
-      <class name="Railway.BookTicketTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:39:28 ICT" name="beforeMethod" finished-at="2026-02-11T14:39:31 ICT" duration-ms="2660" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC12_UserCanBookOneTicketAtATime()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:39:31 ICT" name="TC12_UserCanBookOneTicketAtATime" finished-at="2026-02-11T14:42:30 ICT" duration-ms="179893" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC12_UserCanBookOneTicketAtATime -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:42:30 ICT" name="afterMethod" finished-at="2026-02-11T14:42:31 ICT" duration-ms="889" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:42:31 ICT" name="beforeMethod" finished-at="2026-02-11T14:42:33 ICT" duration-ms="2130" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC13_UserCanBookManyTicketsAtATime()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:42:33 ICT" name="TC13_UserCanBookManyTicketsAtATime" finished-at="2026-02-11T14:43:16 ICT" duration-ms="42515" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC13_UserCanBookManyTicketsAtATime -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:43:16 ICT" name="afterMethod" finished-at="2026-02-11T14:43:18 ICT" duration-ms="1707" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:43:18 ICT" name="beforeMethod" finished-at="2026-02-11T14:43:19 ICT" duration-ms="1734" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC14_UserCanCheckPriceOfTicketFromTimetable()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:43:19 ICT" name="TC14_UserCanCheckPriceOfTicketFromTimetable" finished-at="2026-02-11T14:44:08 ICT" duration-ms="48328" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC14_UserCanCheckPriceOfTicketFromTimetable -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:44:08 ICT" name="afterMethod" finished-at="2026-02-11T14:44:08 ICT" duration-ms="592" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:44:08 ICT" name="beforeMethod" finished-at="2026-02-11T14:44:11 ICT" duration-ms="2407" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC15_UserCanBookTicketFromTimetable()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:44:11 ICT" name="TC15_UserCanBookTicketFromTimetable" finished-at="2026-02-11T14:46:48 ICT" duration-ms="157344" status="PASS">
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC15_UserCanBookTicketFromTimetable -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:46:48 ICT" name="afterMethod" finished-at="2026-02-11T14:46:49 ICT" duration-ms="795" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String)[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:46:49 ICT" name="beforeMethod" finished-at="2026-02-11T14:46:51 ICT" duration-ms="1891" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://railway.somee.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC16_UserCanCancelATicket()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:46:51 ICT" name="TC16_UserCanCancelATicket" finished-at="2026-02-11T14:49:22 ICT" duration-ms="151127" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Cancelled ticket should no longer be in the list expected [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Cancelled ticket should no longer be in the list expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertFalse(Assert.java:79)
-at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:195)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC16_UserCanCancelATicket -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@3af9c5b7]" started-at="2026-02-11T14:49:22 ICT" name="afterMethod" finished-at="2026-02-11T14:49:23 ICT" duration-ms="1237" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@4c39bec8]" started-at="2026-02-12T15:57:36 ICT" name="afterMethod" finished-at="2026-02-12T15:57:37 ICT" duration-ms="675" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.BookTicketTest -->
-    </test> <!-- Login Tests -->
-  </suite> <!-- Railway Booking Test Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

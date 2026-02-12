@@ -17,6 +17,7 @@ public class Constant {
 	public static final String INVALID_PASSWORD = "";
 	public static final String NOT_ACTIVATED_USERNAME = "demo@gmail.com";
 	public static final String PID = "12345678";
+	public static final String FAKEMAIL_URL = "https://www.guerrillamail.com";
 	
 	public static String getNewUserMail() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");

@@ -127,9 +127,9 @@ public class LoginTest extends TestBase {
 	    
 	    System.out.println("1. Navigate to QA Railway Website");    
 	    homePage.open();
-	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
 	    
 	    System.out.println("2. Login with valid Email and Password");
+	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
 	    homePage = loginPage.login(validAccount);
 	    
 	    System.out.println("3. Click on 'FAQ' tab");

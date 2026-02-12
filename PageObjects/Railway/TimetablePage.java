@@ -16,22 +16,22 @@ public class TimetablePage extends GeneralPage{
     private final String bookTicketLinkTemplate = timetableRowTemplate + "//a[contains(@href, 'BookTicket')]";  
     
     private By getCheckPriceLinkLocator(Province from, Province to) {
-        String fromName = from.getVietnameseName();
-        String toName = to.getVietnameseName();
+        String fromName = from.getName();
+        String toName = to.getName();
         String xpath = String.format(checkPriceLinkTemplate, fromName, toName);
         return By.xpath(xpath);
     }
     
     private By getBookTicketLinkLocator(Province from, Province to) {
-        String fromName = from.getVietnameseName();
-        String toName = to.getVietnameseName();
+        String fromName = from.getName();
+        String toName = to.getName();
         String xpath = String.format(bookTicketLinkTemplate, fromName, toName);
         return By.xpath(xpath);
     }
     
     private By getTimetableRowLocator(Province from, Province to) {
-        String fromName = from.getVietnameseName();
-        String toName = to.getVietnameseName();
+        String fromName = from.getName();
+        String toName = to.getName();
         String xpath = String.format(timetableRowTemplate, fromName, toName);
         return By.xpath(xpath);
     }

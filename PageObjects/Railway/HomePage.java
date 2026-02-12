@@ -9,16 +9,16 @@ import Constant.TabMenu;
 public class HomePage extends GeneralPage {
 	
 	//Locators
-	private final By _linkRegister = By.xpath("//a[@href='/Account/Register.cshtml']");
-	private final By _selectedHome = By.xpath("//li[@class='selected']//span[text()='Home']");
+	private final By linkRegister = By.xpath("//a[@href='/Account/Register.cshtml']");
+	private final By selectedHome = By.xpath("//li[@class='selected']//span[text()='Home']");
 	
 	//Elements
 	public WebElement getLinkRegister() {
-        return Constant.WEBDRIVER.findElement(_linkRegister);
+        return Constant.WEBDRIVER.findElement(linkRegister);
     }
 	
 	public WebElement getSelectedHome() {
-        return Constant.WEBDRIVER.findElement(_selectedHome);
+        return Constant.WEBDRIVER.findElement(selectedHome);
     }
 	
 	//Methods

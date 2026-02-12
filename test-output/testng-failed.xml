@@ -1,34 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Railway Booking Test Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Login Tests(failed)">
-    <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://railway.somee.com"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="Railway.BookTicketTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="TC16_UserCanCancelATicket"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
+          <include name="TC15_UserCanBookTicketFromTimetable"/>
         </methods>
       </class> <!-- Railway.BookTicketTest -->
-      <class name="Railway.ResetPasswordTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="beforeSuite"/>
-          <include name="TC10_ResetPasswordShowsErrorIfTheSamePassword"/>
-          <include name="afterMethod"/>
-        </methods>
-      </class> <!-- Railway.ResetPasswordTest -->
-      <class name="Railway.LoginTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="beforeSuite"/>
-          <include name="afterMethod"/>
-          <include name="TC04_LoginWithMultipleWrongPasswordAttempts"/>
-        </methods>
-      </class> <!-- Railway.LoginTest -->
     </classes>
-  </test> <!-- Login Tests(failed) -->
-</suite> <!-- Failed suite [Railway Booking Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

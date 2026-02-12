@@ -13,18 +13,21 @@ public class RegisterTest extends TestBase {
     @Test
     public void TC07_CannotCreateAccountWithExistingEmail() {
         System.out.println("TC07 - User can't create account with existing email");
-    	final Account existingAccount = new Account(Constant.USERNAME, Constant.PASSWORD, Constant.PID);
+        final Account newAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
         final String expectedMsg = "This email address is already in use.";
         
+        System.out.println("PRE-CONDITION: Create and active new account");
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(newAccount);
         
         System.out.println("2. Click on 'Register' tab");
         RegisterPage registerPage = homePage.gotoPage(TabMenu.REGISTER,RegisterPage.class);
         
         System.out.println("3. Enter information of the existing account");
         System.out.println("4. Click on 'Register' button");
-        registerPage.enterRegistrationInfo(existingAccount); 
+        registerPage.enterRegistrationInfo(newAccount);
         
         System.out.println("Verify error message");
         String actualMsg = registerPage.getLblRegisterErrorMsg().getText();

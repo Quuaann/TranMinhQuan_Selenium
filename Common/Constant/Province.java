@@ -8,27 +8,27 @@ public enum Province {
     HUE("Huế"),
     QUANG_NGAI("Quảng Ngãi");
 
-    private final String vietnameseName;
+    private final String name;
 
-    Province(String vietnameseName) {
-        this.vietnameseName = vietnameseName;
+    Province(String name) {
+        this.name = name;
     }
 
-    public String getVietnameseName() {
-        return vietnameseName;
+    public String getName() {
+        return name;
     }
     
-    public static Province fromVietnameseName(String vietnameseName) {
+    public static Province fromVietnameseName(String name) {
         for (Province province : values()) {
-            if (province.getVietnameseName().equalsIgnoreCase(vietnameseName.trim())) {
+            if (province.getName().equalsIgnoreCase(name.trim())) {
                 return province;
             }
         }
-        throw new IllegalArgumentException("Unknown province: " + vietnameseName);
+        throw new IllegalArgumentException("Unknown province: " + name);
     }
 
     @Override
     public String toString() {
-        return vietnameseName;
+        return name;
     }
 }

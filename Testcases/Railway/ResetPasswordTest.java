@@ -17,7 +17,9 @@ public class ResetPasswordTest extends TestBase {
 	    final String expectedErrorMsg = "The new password cannot be the same as the current password";
 	    
 	    System.out.println("PRE-CONDITION: Create and active new account");
-		homePage.createActiveAccount(homePage, newAccount);
+	    homePage.open();
+	    CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(newAccount);;
 	    
 	    System.out.println("1. Navigate to QA Railway Login page");
 	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -35,7 +37,7 @@ public class ResetPasswordTest extends TestBase {
 	    
 	    System.out.println("6. Open email with subject containing 'Please reset your password'");
 	    System.out.println("7. Click on reset link");
-	    String token = mailFake.forgotMail(newAccount.getEmail());
+	    String token = mailFake.forgotMail(newAccount.getUsername());
 	    
 	    System.out.println("Verify user is redirected to Railways page and Form 'Password Change Form' is shown with the reset password token");
 	    Assert.assertTrue(loginPage.isShowTrueToken(token),
@@ -60,7 +62,9 @@ public class ResetPasswordTest extends TestBase {
         final String expectedConfirmErrorMsg = "The password confirmation did not match the new password.";
         
         System.out.println("PRE-CONDITION: Create and activate new account");
-		homePage.createActiveAccount(homePage, newAccount);
+        homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(newAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
         LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -78,7 +82,7 @@ public class ResetPasswordTest extends TestBase {
         
         System.out.println("6. Open email with subject containing 'Please reset your password'");
         System.out.println("7. Click on reset link");
-        String token = mailFake.forgotMail(newAccount.getEmail());
+        String token = mailFake.forgotMail(newAccount.getUsername());
         
         System.out.println("Verify user is redirected to Railways page and Form 'Password Change Form' is shown with the reset password token");
         Assert.assertTrue(loginPage.isShowTrueToken(token),

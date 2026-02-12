@@ -2,10 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Railway Booking Test Suite" verbose="1">
     
-    <!-- Test 1: Login Tests -->
-    <test name="Login Tests">
+    <test name="Railway Booking Test Suite">
     	<parameter name="browser" value="chrome"/>
-        <parameter name="url" value="http://railway.somee.com"/>
         <classes>
             <class name="Railway.LoginTest"></class>
             <class name="Railway.RegisterTest"></class>
@@ -13,8 +11,4 @@
             <class name="Railway.BookTicketTest"></class>
         </classes>
     </test>
-    
-    <!-- Run tests in parallel -->
-    <!-- <suite name="Parallel Tests" parallel="tests" thread-count="3"> -->
-    
 </suite>

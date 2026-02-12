@@ -18,12 +18,14 @@ public class BookTicketTest extends TestBase {
     public void TC12_UserCanBookOneTicketAtATime() {
 		System.out.println("TC12 - User can book 1 ticket at a time");
 	    final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
-	    final String twoDayFromeDepartDay = Utilities.convertDateToStringFromToday(2 + Constant.DEPART_DAY);
-        final BookTicket expectedBookTicket = new BookTicket(twoDayFromeDepartDay,Province.NHA_TRANG,Province.HUE,SeatType.SOFT_SEAT_WITH_AC,"1");
+	    final String nextTwoDay = Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 2);
+        final BookTicket expectedBookTicket = new BookTicket(nextTwoDay, Province.NHA_TRANG,Province.HUE,SeatType.SOFT_SEAT_WITH_AC,"1");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
-        homePage.createActiveAccount(homePage, testAccount);
+        homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
 	    LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -39,15 +41,14 @@ public class BookTicketTest extends TestBase {
         System.out.println("6. Select 'Soft bed with air conditioner' for 'Seat type'");
         System.out.println("7. Select '1' for 'Ticket amount'");
         System.out.println("8. Click on 'Book ticket' button");
-        bookTicketPage = bookTicketPage.bookTicket(expectedBookTicket);      
+        bookTicketPage.bookTicket(expectedBookTicket);      
                         
         System.out.println("Verify message 'Ticket booked successfully!' displays");
-        String successMessage = bookTicketPage.getMsgBookSuccess().getText();
-        Assert.assertTrue(successMessage.contains(expectedSuccessMsg), "Success message not displayed. Actual: " + successMessage);
+        String actualSuccessMessage = bookTicketPage.getMsgBookSuccess().getText();
+        Assert.assertTrue(actualSuccessMessage.contains(expectedSuccessMsg), "Success message not displayed. Actual: " + actualSuccessMessage);
         
         System.out.println("Verify ticket information displays correctly:");
-        BookTicket actualbookTicket = new BookTicket();
-        actualbookTicket = bookTicketPage.getActualBookTicket(actualbookTicket);
+        BookTicket actualbookTicket = bookTicketPage.getActualBookTicket();
         Assert.assertEquals(actualbookTicket.getText(), expectedBookTicket.getText(),"Book Ticket not match");
     }
 	    
@@ -55,11 +56,14 @@ public class BookTicketTest extends TestBase {
     public void TC13_UserCanBookManyTicketsAtATime() {
     	System.out.println("TC13 - User can book many tickets at a time");
         final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
-        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 25), Province.NHA_TRANG, Province.SAI_GON, SeatType.SOFT_SEAT_WITH_AC, "5");
+        final String next25Day = Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 25);
+        final BookTicket expectedBookTicket = new BookTicket(next25Day, Province.NHA_TRANG, Province.SAI_GON, SeatType.SOFT_SEAT_WITH_AC, "5");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
-        homePage.createActiveAccount(homePage, testAccount);
+        homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
         LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -82,8 +86,7 @@ public class BookTicketTest extends TestBase {
         Assert.assertTrue(successMessage.contains(expectedSuccessMsg), "Success message not displayed. Actual: " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
-        BookTicket actualBookTicket = new BookTicket();
-        actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
+        BookTicket actualBookTicket = bookTicketPage.getActualBookTicket();
         Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
     }
     
@@ -95,7 +98,9 @@ public class BookTicketTest extends TestBase {
         final String expectedRoute = "Ticket price from Đà Nẵng to Sài Gòn"; 
         
         System.out.println("PRE-CONDITION: Login with activated account");
-        homePage.createActiveAccount(homePage, testAccount);
+        homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
         LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -118,8 +123,7 @@ public class BookTicketTest extends TestBase {
         Assert.assertEquals(displayedRoute, expectedRoute, "Route not match");
         
         System.out.println("Verify Price for each seat displays correctly");
-        TicketPrice actualTicketPrice = new TicketPrice();
-        actualTicketPrice = ticketPricePage.getTxtTicketTableCell(actualTicketPrice);
+        TicketPrice actualTicketPrice = ticketPricePage.getTxtTicketTableCell();
         Assert.assertEquals(actualTicketPrice.getText(), expectedTicketPrice.getText(), "Ticket prices do not match");
     }
     
@@ -127,11 +131,14 @@ public class BookTicketTest extends TestBase {
     public void TC15_UserCanBookTicketFromTimetable() {
     	System.out.println("TC15 - User can book ticket from Timetable");
         final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
-        final BookTicket expectedBookTicket = new BookTicket(Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 1), Province.QUANG_NGAI, Province.HUE, null, "5");
+        final String nextDay = Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 1);
+        final BookTicket expectedBookTicket = new BookTicket(nextDay, Province.QUANG_NGAI, Province.HUE, null, "5");
         final String expectedSuccessMsg = "Ticket booked successfully!";
         
         System.out.println("PRE-CONDITION: Login with activated account");
-        homePage.createActiveAccount(homePage, testAccount);
+        homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
         LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -145,18 +152,24 @@ public class BookTicketTest extends TestBase {
         System.out.println("4. Click on book ticket of route 'Quảng Ngãi' to 'Huế'");
         BookTicketPage bookTicketPage = timetablePage.clickBookTicketForRoute(Province.QUANG_NGAI, Province.HUE);
         
+        System.out.println("Verify Book ticket form is shown with the corrected 'depart from' and 'Arrive at'");
+        String departFrom = bookTicketPage.getSelectedDepartFrom();
+        String arriveAt = bookTicketPage.getSelectedArriveAt();
+        Assert.assertEquals(departFrom,Province.QUANG_NGAI.getName(), "Book Ticket not match");
+        Assert.assertEquals(arriveAt, Province.HUE.getName(), "Book Ticket not match");
+
+        
         System.out.println("5. Select Depart date = tomorrow");
         System.out.println("6. Select Ticket amount = 5");
         System.out.println("7. Click on 'Book ticket' button");
-        bookTicketPage = bookTicketPage.bookTicketApart(expectedBookTicket.getDepartDate(), "", "", "", expectedBookTicket.getTicketAmount());
+        bookTicketPage.bookTicketApart(expectedBookTicket.getDepartDate(), "", "", "", expectedBookTicket.getTicketAmount());
         
         System.out.println("Verify message 'Ticket booked successfully!' displays");
         String successMessage = bookTicketPage.getMsgBookSuccess().getText();
         Assert.assertTrue(successMessage.contains(expectedSuccessMsg), "Success message not displayed. " + successMessage);
         
         System.out.println("Verify ticket information displays correctly:");
-        BookTicket actualBookTicket = new BookTicket();
-        actualBookTicket = bookTicketPage.getActualBookTicket(actualBookTicket);
+        BookTicket actualBookTicket = bookTicketPage.getActualBookTicket();
         expectedBookTicket.setSeatType(SeatType.fromDisplayName(Constant.DEFAULT_SEATTYPE));
         Assert.assertEquals(actualBookTicket.getText(), expectedBookTicket.getText(), "Book Ticket not match");
     }
@@ -165,11 +178,13 @@ public class BookTicketTest extends TestBase {
     public void TC16_UserCanCancelATicket() {
     	System.out.println("TC16 - User can cancel a ticket");
         final Account testAccount = new Account(Constant.getNewUserMail(), Constant.PASSWORD, Constant.PID);
-        final BookTicket bt = new BookTicket(
-            Utilities.convertDateToStringFromToday(2 + Constant.DEPART_DAY), Province.NHA_TRANG, Province.HUE, SeatType.SOFT_SEAT_WITH_AC, "1");
+        final String nextTwoDay = Utilities.convertDateToStringFromToday(Constant.DEPART_DAY + 2);
+        final BookTicket bt = new BookTicket(nextTwoDay, Province.NHA_TRANG, Province.HUE, SeatType.SOFT_SEAT_WITH_AC, "1");
 
         System.out.println("PRE-CONDITION: Login with activated account");
-        homePage.createActiveAccount(homePage, testAccount);
+        homePage.open();
+        CreateActiveAccountFlow flow = new CreateActiveAccountFlow();
+        flow.createActiveAccount(testAccount);
         
         System.out.println("1. Navigate to QA Railway Login page");
         LoginPage loginPage = homePage.gotoPage(TabMenu.LOGIN,LoginPage.class);
@@ -179,13 +194,13 @@ public class BookTicketTest extends TestBase {
         
         System.out.println("3. Book a ticket");
         BookTicketPage bookTicketPage = homePage.gotoPage(TabMenu.BOOK_TICKET,BookTicketPage.class);
-        bookTicketPage = bookTicketPage.bookTicket(bt);
+        bookTicketPage.bookTicket(bt);
         
         System.out.println("4. Click on 'My ticket' tab");
         MyTicketPage myTicketPage = homePage.gotoPage(TabMenu.MY_TICKET,MyTicketPage.class);
         
         System.out.println("5. Click on 'Cancel' button of ticket which user want to cancel");
-        myTicketPage = myTicketPage.clickCancelTicketByDetails(bt);
+        myTicketPage = myTicketPage.clickCancelTicketByBookTicket(bt);
                 
         System.out.println("6. Click on 'OK' button on Confirmation message 'Are you sure?'");
         Constant.WEBDRIVER.switchTo().alert().accept();

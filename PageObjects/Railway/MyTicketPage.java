@@ -11,8 +11,8 @@ import DataObject.BookTicket;
 public class MyTicketPage extends GeneralPage{
 	
 	// Locators
-	private final By _msgManageTicket = By.xpath("//div[@id='content']//h1");
-    private final String _tbMyTicket = "//table[@class='MyTable']//tr["
+	private final By msgManageTicket = By.xpath("//div[@id='content']//h1");
+    private final String tbMyTicket = "//table[@class='MyTable']//tr["
     	    + "td[2][normalize-space()='%s'] and "
     	    + "td[3][normalize-space()='%s'] and "
     	    + "td[4][normalize-space()='%s'] and "
@@ -21,19 +21,19 @@ public class MyTicketPage extends GeneralPage{
    
     // Elements
     public WebElement getMsgManageTicket() {
-        return Constant.WEBDRIVER.findElement(_msgManageTicket);
+        return Constant.WEBDRIVER.findElement(msgManageTicket);
     }
     
     // Methods
-    public MyTicketPage clickCancelTicketByDetails(BookTicket bt) {
-    	String xpath = String.format(_tbMyTicket, bt.getDepartFrom(), bt.getArriveAt(), bt.getSeatType(), bt.getDepartDate(), bt.getTicketAmount()); 
+    public MyTicketPage clickCancelTicketByBookTicket(BookTicket bt) {
+    	String xpath = String.format(tbMyTicket, bt.getDepartFrom(), bt.getArriveAt(), bt.getSeatType(), bt.getDepartDate(), bt.getTicketAmount()); 
     	Utilities.scrollToElement(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
     	Constant.WEBDRIVER.findElement(By.xpath(xpath)).click();
       return this;
     }
     
     public boolean isTicketStillPresent(BookTicket bt) {
-    	String xpath = String.format(_tbMyTicket, bt.getDepartFrom(), bt.getArriveAt(), bt.getSeatType(), bt.getDepartDate(), bt.getTicketAmount()); 
+    	String xpath = String.format(tbMyTicket, bt.getDepartFrom(), bt.getArriveAt(), bt.getSeatType(), bt.getDepartDate(), bt.getTicketAmount()); 
     	return !Constant.WEBDRIVER.findElements(By.xpath(xpath)).isEmpty();
     }
     

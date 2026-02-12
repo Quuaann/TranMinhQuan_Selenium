@@ -4,64 +4,62 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import Constant.Constant;
 import Common.Utilities;
 public class MailFake {
 	
 	//Locators
-	private final By _tbEmail = By.xpath("//span[contains(@class, 'editable')]//input");
-	private final By _trEmail = By.xpath("//tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com']");
-	private final By _trForgotEmail = By.xpath("//tbody[@id='email_list']//span[starts-with(., 'Use this')]");
-	private final By _btnForget = By.xpath("//a[@id='forget_button']");
-	private final By _btnNewMail = By.xpath("//span[@id='inbox-id']");
-	private final By _checkbox = By.xpath("//input[@id='use-alias']");
-	private final By _btnSet = By.xpath("//button[@class='save button small']");
-	public static final String FAKEMAIL_URL = "https://www.guerrillamail.com";
-	private final By _activeLink = By.xpath("//div[contains(@class, 'email_body')]//a");
-	private final By _bodyEmail = By.xpath("//div[@class= 'email_body']");
+	private final By tbEmail = By.xpath("//span[contains(@class, 'editable')]//input");
+	private final By trEmail = By.xpath("//tbody[@id='email_list']//td[normalize-space()='thanhletraining03@gmail.com']");
+	private final By trForgotEmail = By.xpath("//tbody[@id='email_list']//span[starts-with(., 'Use this')]");
+	private final By btnForget = By.xpath("//a[@id='forget_button']");
+	private final By btnNewMail = By.xpath("//span[@id='inbox-id']");
+	private final By checkbox = By.xpath("//input[@id='use-alias']");
+	private final By btnSet = By.xpath("//button[@class='save button small']");
+	private final By activeLink = By.xpath("//div[contains(@class, 'email_body')]//a");
+	private final By bodyEmail = By.xpath("//div[@class= 'email_body']");
 	
 	//Elements
 	public WebElement getTbNewEmail() {
-        return Constant.WEBDRIVER.findElement(_tbEmail);
+        return Constant.WEBDRIVER.findElement(tbEmail);
     }
 	
 	public WebElement getBtnForget() {
-        return Constant.WEBDRIVER.findElement(_btnForget);
+        return Constant.WEBDRIVER.findElement(btnForget);
     }
 	
 	public WebElement getBtnNewMail() {
-        return Constant.WEBDRIVER.findElement(_btnNewMail);
+        return Constant.WEBDRIVER.findElement(btnNewMail);
     }
 	
 	public WebElement getCheckbox() {
-        return Constant.WEBDRIVER.findElement(_checkbox);
+        return Constant.WEBDRIVER.findElement(checkbox);
     }
 	
 	public WebElement getBtnSet() {
-        return Constant.WEBDRIVER.findElement(_btnSet);
+        return Constant.WEBDRIVER.findElement(btnSet);
     }
 	
 	public WebElement getTrNewMail() {
-        return Constant.WEBDRIVER.findElement(_trEmail);
+        return Constant.WEBDRIVER.findElement(trEmail);
     }
 	
 	public WebElement getActiveLink() {
-        return Constant.WEBDRIVER.findElement(_activeLink);
+        return Constant.WEBDRIVER.findElement(activeLink);
     }
 	
 	public WebElement getTrForgotMail() {
-        return Constant.WEBDRIVER.findElement(_trForgotEmail);
+        return Constant.WEBDRIVER.findElement(trForgotEmail);
     }
 	
 	public WebElement getBodyEmail() {
-        return Constant.WEBDRIVER.findElement(_bodyEmail);
+        return Constant.WEBDRIVER.findElement(bodyEmail);
     }
 	
 	//Methods
 	public String getToken() {
-		Utilities.waitForVisible(_bodyEmail);
+		Utilities.waitForVisible(bodyEmail);
 		String emailContent = this.getBodyEmail().getText();
 		if (emailContent.contains("The token is: ")) {
 	        String[] parts = emailContent.split("The token is: ");
@@ -72,35 +70,21 @@ public class MailFake {
 	    }
         return "";
 	}
-		
-	public void waitAndRefreshUntilVisible(WebDriver driver, By locator, int retries) {
-	    for (int i = 0; i <= retries; i++) { 
-	    	try {
-		        Utilities.waitForVisible(locator,10); 
-		        Constant.WEBDRIVER.navigate().refresh();
-		        this.getCheckbox().click();
-		        return;
-	    	} catch (Exception e) {
-	    		
-		    }
-	    }
-	}
 	
-	public String forgotMail(String newmail) {
+	public String forgotMail(String newUser) {
 		this.getCheckbox().click();
 		this.getBtnNewMail().click();
 		this.getTbNewEmail().clear();
-		this.getTbNewEmail().sendKeys(newmail);
+		this.getTbNewEmail().sendKeys(newUser);
 		this.getBtnSet().click();
 		
-		this.waitAndRefreshUntilVisible(Constant.WEBDRIVER, _trForgotEmail, 4);
-        
-        Utilities.scrollToElement(_checkbox);
+		Utilities.waitForVisible(trForgotEmail);
+        Utilities.scrollToElement(checkbox);
         this.getTrForgotMail().click();
         
         final String token = this.getToken();
 		
-        Utilities.waitForVisible(_activeLink);
+        Utilities.waitForVisible(activeLink);
         this.getActiveLink().click();
         
 		ArrayList<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
@@ -110,18 +94,17 @@ public class MailFake {
 	    return token;
 	}
 	
-	public void activeNewMail(String newmail) {
+	public void activeNewMail(String newUser) {
 		this.getCheckbox().click();
 		this.getBtnNewMail().click();
-		this.getTbNewEmail().sendKeys(newmail);
+		this.getTbNewEmail().sendKeys(newUser);
 		this.getBtnSet().click();
         
-		this.waitAndRefreshUntilVisible(Constant.WEBDRIVER, _trEmail, 4);
-        
-        Utilities.scrollToElement(_checkbox);
+		Utilities.waitForVisible(trEmail);
+        Utilities.scrollToElement(checkbox);
         this.getTrNewMail().click();
 		
-        Utilities.waitForVisible(_activeLink);
+        Utilities.waitForVisible(activeLink);
         this.getActiveLink().click();
         
 		ArrayList<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
@@ -135,7 +118,7 @@ public class MailFake {
 	    ArrayList<String> tabs = new ArrayList<>(Constant.WEBDRIVER.getWindowHandles());
 	    tabs.get(1); 
 	    Constant.WEBDRIVER.switchTo().window(tabs.get(tabs.size() - 1));
-	    Constant.WEBDRIVER.navigate().to(FAKEMAIL_URL);
+	    Constant.WEBDRIVER.navigate().to(Constant.FAKEMAIL_URL);
 		return this;
 	}
 	
