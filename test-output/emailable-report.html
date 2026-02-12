@@ -8,51 +8,56 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">74,292</td><td></td><td></td></tr>
+<tr><th colspan="8">Railway Booking Test Suite</th></tr>
+<tr><td><a href="#t0">Railway Booking Test Suite</a></td><td class="num">13</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">967,008</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Railway.BookTicketTest</td><td><a href="#m0">TC15_UserCanBookTicketFromTimetable</a></td><td rowspan="1">1770886586251</td><td rowspan="1">70513</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Railway Booking Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Railway Booking Test Suite &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Railway.BookTicketTest</td><td><a href="#m0">TC16_UserCanCancelATicket</a></td><td rowspan="1">1770890358999</td><td rowspan="1">35827</td></tr><tr class="failedodd"><td rowspan="1">Railway.LoginTest</td><td><a href="#m1">TC04_LoginWithMultipleWrongPasswordAttempts</a></td><td rowspan="1">1770889477126</td><td rowspan="1">10019</td></tr><tr class="failedeven"><td rowspan="1">Railway.ResetPasswordTest</td><td><a href="#m2">TC10_ResetPasswordShowsErrorIfTheSamePassword</a></td><td rowspan="1">1770889742508</td><td rowspan="1">48295</td></tr><tr><th colspan="4">Railway Booking Test Suite &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">Railway.BookTicketTest</td><td><a href="#m3">TC12_UserCanBookOneTicketAtATime</a></td><td rowspan="1">1770889923801</td><td rowspan="1">67480</td></tr><tr class="passedeven"><td><a href="#m4">TC13_UserCanBookManyTicketsAtATime</a></td><td rowspan="1">1770889994191</td><td rowspan="1">132810</td></tr><tr class="passedeven"><td><a href="#m5">TC14_UserCanCheckPriceOfTicketFromTimetable</a></td><td rowspan="1">1770890129700</td><td rowspan="1">125704</td></tr><tr class="passedeven"><td><a href="#m6">TC15_UserCanBookTicketFromTimetable</a></td><td rowspan="1">1770890259768</td><td rowspan="1">96488</td></tr><tr class="passedodd"><td rowspan="5">Railway.LoginTest</td><td><a href="#m7">TC01_LoginWithValidUsernameAndPassword</a></td><td rowspan="1">1770889432504</td><td rowspan="1">8597</td></tr><tr class="passedodd"><td><a href="#m8">TC02_LoginWithBlankUsername</a></td><td rowspan="1">1770889443787</td><td rowspan="1">10767</td></tr><tr class="passedodd"><td><a href="#m9">TC03_LoginWithInvalidPassword</a></td><td rowspan="1">1770889456858</td><td rowspan="1">17312</td></tr><tr class="passedodd"><td><a href="#m10">TC05_LoginWithNotActivatedAccount</a></td><td rowspan="1">1770889489727</td><td rowspan="1">26835</td></tr><tr class="passedodd"><td><a href="#m11">TC06_RedirectToHomeAfterLogout</a></td><td rowspan="1">1770889518880</td><td rowspan="1">12628</td></tr><tr class="passedeven"><td rowspan="3">Railway.RegisterTest</td><td><a href="#m12">TC07_CannotCreateAccountWithExistingEmail</a></td><td rowspan="1">1770889533981</td><td rowspan="1">37025</td></tr><tr class="passedeven"><td><a href="#m13">TC08_RegisterWithEmptyPasswordAndPID</a></td><td rowspan="1">1770889573777</td><td rowspan="1">129156</td></tr><tr class="passedeven"><td><a href="#m14">TC09_CreateAndActivateAccount</a></td><td rowspan="1">1770889705603</td><td rowspan="1">33841</td></tr><tr class="passedodd"><td rowspan="1">Railway.ResetPasswordTest</td><td><a href="#m15">TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword</a></td><td rowspan="1">1770889793997</td><td rowspan="1">125526</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">Railway.BookTicketTest#TC15_UserCanBookTicketFromTimetable</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@id=&apos;email_list&apos;]//td[normalize-space()=&apos;thanhletraining03@gmail.com&apos;]&quot;}.
-(tried for 30 seconds with 500 milliseconds interval)
+<h2>Railway Booking Test Suite</h2><h3 id="m0">Railway.BookTicketTest#TC16_UserCanCancelATicket</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Cancelled ticket should no longer be in the list expected [false] but found [true]
+	at Railway.BookTicketTest.TC16_UserCanCancelATicket(BookTicketTest.java:210)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Railway.LoginTest#TC04_LoginWithMultipleWrongPasswordAttempts</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Attempt limit warning message is not displayed expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+	at Railway.LoginTest.TC04_LoginWithMultipleWrongPasswordAttempts(LoginTest.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Railway.ResetPasswordTest#TC10_ResetPasswordShowsErrorIfTheSamePassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=144.0.7559.133)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
 Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63159}, goog:processID: 43936, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63159/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e64f0c2cf49fd9dbe980a15cd4c43b30
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Common.Utilities.waitForVisible(Utilities.java:58)
-	at Common.Utilities.waitForVisible(Utilities.java:53)
-	at Guerrillamail.MailFake.activeNewMail(MailFake.java:103)
-	at Railway.CreateActiveAccountFlow.createActiveAccount(CreateActiveAccountFlow.java:14)
-	at Railway.BookTicketTest.TC15_UserCanBookTicketFromTimetable(BookTicketTest.java:141)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+Command: [7db563fff1aaa3315486776f6558131b, getElementText {id=f.FF111A397A0B714F6C7F3A6BACE68F02.d.6E99A624D53D76AB4A53780401C4862C.e.17}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\rjck0\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51560}, goog:processID: 44656, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51560/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7db563fff1aaa3315486776f6558131b)] -&gt; xpath: //div[@class=&apos;account&apos;]/strong]
+Session ID: 7db563fff1aaa3315486776f6558131b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
+	at Railway.GeneralPage.getWelcomeMessage(GeneralPage.java:34)
+	at Railway.LoginPage.isLogined(LoginPage.java:84)
+	at Railway.LoginPage.resetPassword(LoginPage.java:131)
+	at Railway.ResetPasswordTest.TC10_ResetPasswordShowsErrorIfTheSamePassword(ResetPasswordTest.java:48)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Railway.BookTicketTest#TC12_UserCanBookOneTicketAtATime</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Railway.BookTicketTest#TC13_UserCanBookManyTicketsAtATime</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Railway.BookTicketTest#TC14_UserCanCheckPriceOfTicketFromTimetable</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">Railway.BookTicketTest#TC15_UserCanBookTicketFromTimetable</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">Railway.LoginTest#TC01_LoginWithValidUsernameAndPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">Railway.LoginTest#TC02_LoginWithBlankUsername</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">Railway.LoginTest#TC03_LoginWithInvalidPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">Railway.LoginTest#TC05_LoginWithNotActivatedAccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">Railway.LoginTest#TC06_RedirectToHomeAfterLogout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">Railway.RegisterTest#TC07_CannotCreateAccountWithExistingEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">Railway.RegisterTest#TC08_RegisterWithEmptyPasswordAndPID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">Railway.RegisterTest#TC09_CreateAndActivateAccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">Railway.ResetPasswordTest#TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

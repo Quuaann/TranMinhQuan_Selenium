@@ -47,36 +47,6 @@ public enum SeatType {
         throw new IllegalArgumentException("Unknown seat type abbreviation: " + abbreviation);
     }
     
-    // Kiểm tra xem string có phải là seat type hợp lệ không
-    public static boolean isValidSeatType(String seatType) {
-        try {
-            fromDisplayName(seatType);
-            return true;
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
-    }
-    
-    // Lấy tất cả display names
-    public static String[] getAllDisplayNames() {
-        SeatType[] values = values();
-        String[] names = new String[values.length];
-        for (int i = 0; i < values.length; i++) {
-            names[i] = values[i].getDisplayName();
-        }
-        return names;
-    }
-    
-    // Lấy tất cả abbreviations
-    public static String[] getAllAbbreviations() {
-        SeatType[] values = values();
-        String[] abbrs = new String[values.length];
-        for (int i = 0; i < values.length; i++) {
-            abbrs[i] = values[i].getAbbreviation();
-        }
-        return abbrs;
-    }
-    
     @Override
     public String toString() {
         return displayName;

@@ -4,25 +4,12 @@
   <test thread-count="5" name="Railway Booking Test Suite(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Railway.RegisterTest">
-        <methods>
-          <include name="TC07_CannotCreateAccountWithExistingEmail"/>
-          <include name="beforeMethod"/>
-          <include name="TC09_CreateAndActivateAccount"/>
-          <include name="beforeSuite"/>
-          <include name="afterMethod"/>
-        </methods>
-      </class> <!-- Railway.RegisterTest -->
       <class name="Railway.BookTicketTest">
         <methods>
           <include name="beforeMethod"/>
           <include name="TC16_UserCanCancelATicket"/>
-          <include name="TC14_UserCanCheckPriceOfTicketFromTimetable"/>
           <include name="beforeSuite"/>
-          <include name="TC13_UserCanBookManyTicketsAtATime"/>
-          <include name="TC12_UserCanBookOneTicketAtATime"/>
           <include name="afterMethod"/>
-          <include name="TC15_UserCanBookTicketFromTimetable"/>
         </methods>
       </class> <!-- Railway.BookTicketTest -->
       <class name="Railway.ResetPasswordTest">
@@ -31,14 +18,12 @@
           <include name="beforeSuite"/>
           <include name="TC10_ResetPasswordShowsErrorIfTheSamePassword"/>
           <include name="afterMethod"/>
-          <include name="TC11_ResetPasswordShowsErrorIfDifferentConfirmPassword"/>
         </methods>
       </class> <!-- Railway.ResetPasswordTest -->
       <class name="Railway.LoginTest">
         <methods>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
-          <include name="TC03_LoginWithInvalidPassword"/>
           <include name="afterMethod"/>
           <include name="TC04_LoginWithMultipleWrongPasswordAttempts"/>
         </methods>

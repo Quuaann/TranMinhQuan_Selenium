@@ -126,6 +126,7 @@ public class LoginPage extends GeneralPage {
     public <T> T resetPassword(String newPassword, String confirmPassword) {       
         this.getTxtNewPassword().sendKeys(newPassword);
         this.getTxtConfirmPassword().sendKeys(confirmPassword);
+        Utilities.scrollToElement(btnResetPassword);
         this.getBtnResetPassword().click();
         
         if (isLogined()) {

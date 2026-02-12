@@ -18,15 +18,6 @@ public class Account {
         this.pid = pid;
     }
     
-    public Account(String username, String email, String password, 
-                      String confirmPassword, String pid) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-        this.pid = pid;
-    }
-    
     // GETTERS
     public String getUsername() {
         return this.username;

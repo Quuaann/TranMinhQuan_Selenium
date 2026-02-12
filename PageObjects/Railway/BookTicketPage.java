@@ -24,7 +24,6 @@ public class BookTicketPage extends GeneralPage{
     
     private final By msgBookSuccess = By.xpath("//div[@id='content']//h1");
     private final By trLastTicket = By.xpath("//table[@class='MyTable WideTable']//tr[last()]");
-
     
     // Elements
     public WebElement getTxtDepartDate() {
@@ -112,11 +111,9 @@ public class BookTicketPage extends GeneralPage{
     }
     
     public BookTicket getActualBookTicket() {
+    	
     	BookTicket bt = new BookTicket();
-        WebElement lastRow = getTrLastTicket();
-        
-        // Lấy tất cả các ô trong dòng
-        List<WebElement> cells = lastRow.findElements(By.tagName("td"));
+        List<WebElement> cells = getTrLastTicket().findElements(By.tagName("td"));
         
         if (cells.size() >= 8) {
             // Gán giá trị từ bảng vào đối tượng BookTicket
